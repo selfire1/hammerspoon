@@ -11,6 +11,8 @@ table.insert(Config.spaces, {
 Config.funcs.deep = {
   setup = function()
     hs.application.open('com.todoist.mac.Todoist')
+    local todoist = hs.application("Todoist")
+    todoist:mainWindow():moveToUnit(hs.layout.maximized)
   end,
   teardown = function()
     hs.application.find('com.todoist.mac.Todoist'):kill()
