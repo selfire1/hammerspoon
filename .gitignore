@@ -1,3 +1,4 @@
 .secrets.json
-./.vscode
-workspace.code-workspace
+*.code-workspace
+.DS_Store
+.vscode
