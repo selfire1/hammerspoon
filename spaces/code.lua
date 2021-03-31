@@ -11,9 +11,9 @@ table.insert(config.spaces, {
 
 config.funcs.code = {
   setup = function()
-    hs.application.open('com.github.atom')
+    hs.application.open('com.microsoft.VSCode')
   end,
   teardown = function()
-    hs.application.find('com.github.atom'):kill()
+    hs.application.find('com.microsoft.VSCode'):kill()
   end
 }
