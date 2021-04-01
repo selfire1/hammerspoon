@@ -1,16 +1,21 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Binge",
   subText = "Grab some popcorn and enjoy watching videos.",
   image = hs.image.imageFromAppBundle('org.epichrome.eng.YouTube'),
-  togglProj = config.projects.binge,
+  togglProj = Config.projects.binge,
   togglDescr = "Binge",
   whitelist = {'video', 'browser'},
   funcs = 'binge',
   intentRequired = true,
-  intentSuggestions = hs.settings.get("secrets").binge
+  intentSuggestions = {{ 
+    text = "Netflix"
+  },
+  {
+    text = "YouTube"
+  }}
 })
 
-config.funcs.binge = {
+Config.funcs.binge = {
   setup = function()
     -- Open YouTube with Brave
     hs.urlevent.openURLWithBundle("https://www.youtube.com/feed/subscriptions", "com.brave.Browser")
