@@ -98,7 +98,6 @@ return {
   },
   ['com.github.atom'] = {
     bundleID = 'com.github.atom',
-    hyper_key = 'a',
     tags = {'coding'}
   },
   ['org.whispersystems.signal-desktop'] = {
@@ -112,7 +111,7 @@ return {
   },
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
-    hyper_key = 'v',
+    hyper_key = 'a',
     tags = {'coding'}
   }
 }
