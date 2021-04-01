@@ -4,6 +4,7 @@
 
 -- Plugins required:
 -- * "Obsidian Advanced URI" plugin (https://github.com/Vinzent03/obsidian-advanced-uri)
+-- * "Natural Language Dates" plugin (https://github.com/argenos/nldates-obsidian)
 
 local module = {}
 
