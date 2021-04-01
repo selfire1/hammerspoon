@@ -1,8 +1,8 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Browse",
   subText = "Roam around the internet … but not for long!",
   image = hs.image.imageFromAppBundle('com.brave.Browser'),
-  togglProj = config.projects.browse,
+  togglProj = Config.projects.browse,
   funcs = 'browse',
   whitelist = {'browser'},
   intentRequired = true

@@ -1,14 +1,14 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Journal",
   subText = "Write about the day.",
   image = hs.image.imageFromAppBundle('md.obsidian'),
   funcs = 'journal',
-  togglProj = config.projects.writing,
+  togglProj = Config.projects.writing,
   togglDescr = "Journaling",
   whitelist = {'writing'}
 })
 
-config.funcs.journal = {
+Config.funcs.journal = {
     setup = function ()
         -- Open Obsidian in workspace "blank"
         -- Commented out because plugin is yet to be released!

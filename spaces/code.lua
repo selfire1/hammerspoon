@@ -1,15 +1,15 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Code",
   subText = "Grow in understanding of coding.",
   image = hs.image.imageFromAppBundle('com.github.atom'),
   launch = {'coding'},
   whitelist = {'coding', 'browser', 'notes', 'tasks'},
-  togglProj = config.projects.code,
+  togglProj = Config.projects.code,
   intentRequired = true,
   funcs = 'code'
 })
 
-config.funcs.code = {
+Config.funcs.code = {
   setup = function()
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')

@@ -1,13 +1,13 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Social Gaming",
   subText = "Adventure with others in vast worlds.",
   image = hs.image.imageFromAppBundle('com.hnc.Discord'),
-  togglProj = config.projects.social_play,
+  togglProj = Config.projects.social_play,
   whitelist = {'gaming', 'messenger', 'voicechat', 'browser', 'notes'},
   funcs = 'social_play'
 })
 
-config.funcs.social_play = {
+Config.funcs.social_play = {
 setup = function()
     -- Open Discord
     hs.application.open('com.hnc.Discord')

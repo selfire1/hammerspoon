@@ -1,13 +1,13 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Communicate",
   subText = "Be in touch with others.",
   image = hs.image.imageFromAppBundle('com.apple.iChat'),
   whitelist = {'communication', 'review', 'coding'},
-  togglProj = config.projects.communicate,
+  togglProj = Config.projects.communicate,
   funcs = 'chat'
 })
 
-config.funcs.chat = {
+Config.funcs.chat = {
 setup = function()
     -- Open WhatsApp and move it to the left
     hs.application.open('desktop.WhatsApp')

@@ -1,15 +1,15 @@
 local obsidian = require "obsidian"
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Weekly Review",
   subText = "Plan the week in Todoist.",
   image = hs.image.imageFromAppBundle('com.apple.iCal'),
-  togglProj = config.projects.deep,
+  togglProj = Config.projects.deep,
   togglDescr = "Weekly Review",
   whitelist = {'writing', 'transfer'},
   funcs = "weekly_review"
 })
 
-config.funcs.weekly_review = {
+Config.funcs.weekly_review = {
   setup = function()
     -- Open Obsidian workspace "weekly_review"
     obsidian.openWorkspace("weekly_review")

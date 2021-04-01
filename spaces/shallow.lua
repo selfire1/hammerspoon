@@ -1,14 +1,14 @@
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Quick tasks",
   subText = "Chip away on shallow work.",
   image = hs.image.imageFromAppBundle('com.todoist.mac.Todoist'),
-  togglProj = config.projects.shallow,
+  togglProj = Config.projects.shallow,
   blacklist = {'distraction', 'coding', 'work'},
   funcs = "shallow",
   intentRequired = true
 })
 
-config.funcs.shallow = {
+Config.funcs.shallow = {
     setup = function ()
         -- Open Todoist and maximise it
     hs.application.open('com.todoist.mac.Todoist')

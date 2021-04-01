@@ -1,12 +1,12 @@
 local toggl = require('toggl')
 
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Pause 🏝️",
   subText = "Pause on screentime. Take a break, walk around.",
   funcs = "pause"
 })
 
-config.funcs.pause = {
+Config.funcs.pause = {
   setup = function()
     toggl.stopToggl()
     hs.settings.clear("headspace")

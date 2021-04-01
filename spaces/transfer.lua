@@ -1,15 +1,15 @@
 local obsidian = require "obsidian"
-table.insert(config.spaces, {
+table.insert(Config.spaces, {
   text = "Transfer",
   subText = "Outline, transfer and discover new and old ideas.",
   image = hs.image.imageFromAppBundle('com.amazon.Kindle'),
-  togglProj = config.projects.write,
+  togglProj = Config.projects.write,
   togglDescr = "Transferring Notes from Kindle or Evernote",
   whitelist = {'writing', 'transfer'},
   funcs = "transfer"
 })
 
-config.funcs.transfer = {
+Config.funcs.transfer = {
   setup = function()
     -- Open workspace "Transfer" in Obsidian
     obsidian.openWorkspace("transfer")
