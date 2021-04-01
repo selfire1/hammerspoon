@@ -4,16 +4,18 @@ table.insert(config.spaces, {
   image = hs.image.imageFromAppBundle('com.github.atom'),
   launch = {'coding'},
   whitelist = {'coding', 'browser', 'notes', 'tasks'},
-  toggl_proj = config.projects.code,
+  togglProj = config.projects.code,
   intentRequired = true,
   funcs = 'code'
 })
 
 config.funcs.code = {
   setup = function()
+    -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
   end,
   teardown = function()
+    -- Quit VS Code
     hs.application.find('com.microsoft.VSCode'):kill()
   end
 }

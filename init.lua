@@ -50,6 +50,9 @@ local autolayout = require('autolayout')
 local brave = require('brave')
       brave.start(Config)
 
+local obsidian = require('obsidian')
+      obsidian.start(Config)
+
 hs.loadSpoon('Headspace')
 spoon.Headspace:start()
                :loadConfig(Config)

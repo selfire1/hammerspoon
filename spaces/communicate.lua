@@ -3,7 +3,7 @@ table.insert(config.spaces, {
   subText = "Be in touch with others.",
   image = hs.image.imageFromAppBundle('com.apple.iChat'),
   whitelist = {'communication', 'review', 'coding'},
-  toggl_proj = config.projects.communicate,
+  togglProj = config.projects.communicate,
   funcs = 'chat'
 })
 
@@ -19,7 +19,7 @@ setup = function()
     messenger:mainWindow():moveToUnit(hs.layout.right50)
 end,
 teardown = function()
-    -- Kill a bunch of apps
+    -- Quit a bunch of apps
     hs.application.find('desktop.WhatsApp'):kill()
     hs.application.find('com.facebook.archon'):kill()
     hs.application.find('org.epichrome.eng.Standard Gmail'):kill()

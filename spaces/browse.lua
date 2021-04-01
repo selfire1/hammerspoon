@@ -2,7 +2,7 @@ table.insert(config.spaces, {
   text = "Browse",
   subText = "Roam around the internet … but not for long!",
   image = hs.image.imageFromAppBundle('com.brave.Browser'),
-  toggl_proj = config.projects.browse,
+  togglProj = config.projects.browse,
   funcs = 'browse',
   whitelist = {'browser'},
   intentRequired = true
@@ -10,6 +10,7 @@ table.insert(config.spaces, {
 
 Config.funcs.browse = {
   setup = function()
+    -- Open Brave
     hs.application.open('com.brave.Browser')
   end
 }
