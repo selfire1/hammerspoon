@@ -31,7 +31,7 @@ end
 module.today = function ()
     -- Open Obsidian in blank
     -- Calling the above module throws curly lines for now:
-    obsidian.blank()
+    module.blank()
     -- Open today's journal
     hs.urlevent.openURLWithBundle('obsidian://nldates?day=today', 'md.obsidian')
 end
