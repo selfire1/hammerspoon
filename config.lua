@@ -1,9 +1,9 @@
 return {
   ['com.todoist.mac.Todoist'] = {
     bundleID = 'com.todoist.mac.Todoist',
-    hyper_key = 't',
+    hyperKey = 't',
     tags = {'review', 'tasks'},
-    rules = {
+    layouts = {
       {nil, 2, hs.layout.maximized}
     }
   },
@@ -17,17 +17,17 @@ return {
   },
   ['com.brave.Browser'] = {
     bundleID = 'com.brave.Browser',
-    hyper_key = 'b',
+    hyperKey = 'b',
     tags = {'browser', 'research'}
   },
   ['desktop.WhatsApp'] = {
     bundleID = 'desktop.WhatsApp',
-    hyper_key = 'n',
+    hyperKey = 'n',
     tags = {'communication','messenger'}
   },
   ['com.facebook.archon'] = {
     bundleID = 'com.facebook.archon',
-    hyper_key = 'm',
+    hyperKey = 'm',
     tags = {'communication','messenger'}
   },
   ['org.epichrome.eng.YouTube'] = {
@@ -44,7 +44,10 @@ return {
   },
   ['com.fluidapp.FluidApp2.YWAM Gmail'] = {
     bundleID = 'com.fluidapp.FluidApp2.YWAM Gmail',
-    tags = {'work'}
+    tags = {'work'},
+    rules = {
+      {nil, 2, hs.layout.right50}
+    }
   },
   ['org.epichrome.eng.ProtonMail'] = {
     bundleID = 'org.epichrome.eng.ProtonMail',
@@ -54,13 +57,13 @@ return {
     bundleID = 'com.fluidapp.FluidApp2.YS Todoist',
     hyper = 'y',
     tags = {'work', 'work_tasks'},
-    rules = {
-      {nil, 2, hs.layout.maximized}
+    layouts = {
+      {nil, 1, hs.layout.maximized}
     }
   },
   ['com.apple.iCal'] = {
     bundleID = 'com.apple.iCal',
-    hyper_key = 'c',
+    hyperKey = 'c',
     tags = {'planning', 'review', 'calendar'},
     whitelisted = true,
   },
@@ -74,18 +77,18 @@ return {
   },
   ['com.spotify.client'] = {
     bundleID = 'com.spotify.client',
-    hyper_key = 's'
+    hyperKey = 's'
   },
   ['md.obsidian'] = {
     bundleID = 'md.obsidian',
-    hyper_key = 'o',
+    hyperKey = 'o',
     tags = {'research', 'notes', 'writing'},
   },
   ['com.twistapp.mac-sparkle.Twist'] = {
     bundleID = 'com.twistapp.mac-sparkle.Twist',
     tags = {'work', 'work_twist'},
     rules = {
-      {nil, 2, hs.layout.maximized}
+      {nil, 2, hs.layout.left50}
     }
   },
   ['com.amazon.Kindle'] = {
@@ -106,12 +109,12 @@ return {
   },
   ['com.apple.Terminal'] = {
     bundleID = 'com.apple.Terminal',
-    hyper_key = 'h',
+    hyperKey = 'h',
     tags = {'coding'}
   },
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
-    hyper_key = 'a',
+    hyperKey = 'a',
     tags = {'coding'}
   }
 }
