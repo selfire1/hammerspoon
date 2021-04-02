@@ -2,3 +2,5 @@
 *.code-workspace
 .DS_Store
 .vscode
+spaces/ys_work.lua
+spaces/images
