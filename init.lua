@@ -1,6 +1,10 @@
 local secrets = require('secrets')
       secrets.start('.secrets.json')
 
+
+
+hs.loadSpoon('Headspace')
+
 Config = require('config')
 
 -- provide the ability to override config per computer
@@ -18,7 +22,7 @@ Config.projects = hs.settings.get("secrets").toggl.projects
 require('spaces/deep')
 require('spaces/code')
 require('spaces/write')
-require('spaces/process')
+require('spaces/transfer')
 -- Shallow
 require('spaces/shallow')
 require('spaces/browse')
@@ -53,7 +57,7 @@ local brave = require('brave')
 local obsidian = require('obsidian')
       obsidian.start(Config)
 
-hs.loadSpoon('Headspace')
+
 spoon.Headspace:start()
                :loadConfig(Config)
                :setTogglKey(hs.settings.get('secrets').toggl.key)
