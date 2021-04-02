@@ -1,16 +1,10 @@
 local secrets = require('secrets')
       secrets.start('.secrets.json')
 
-
-
+hs.loadSpoon('Hyper')
 hs.loadSpoon('Headspace')
 
 Config = require('config')
-
--- provide the ability to override config per computer
-if (hs.fs.displayName('./local_config.lua')) then
-  require('local_config')
-end
 
 -- configure spaces for headspace
 Config.spaces = {}
@@ -41,8 +35,16 @@ require('spaces/shutdown')
 -- Outside
 require('spaces/ys_work')
 
-Hyper = require('hyper')
-Hyper.start(Config)
+Hyper = spoon.Hyper
+
+-- provide the ability to override config per computer
+if (hs.fs.displayName('./local_config.lua')) then
+  require('local_config')
+end
+
+Hyper
+:start(Config)
+:setHyperKey('F19')
 
 Movewindows = require('movewindows')
 Movewindows.start()
@@ -73,12 +75,7 @@ hyper:bind({}, 'r', nil, function()
   hs.reload()
 end)
 
--- Random bindings
-Hyper:bind({}, 'h', nil, function()
-  hs.application.launchOrFocusByBundleID('org.hammerspoon.Hammerspoon')
-end)
-Hyper:bind({}, 'r', nil, function() hs.reload() end)
-
+-- Copy markdown link and tab title from brave
 hyper:bind({}, 'k', nil, function()
   return hs.osascript.applescript(
   [[
@@ -96,8 +93,6 @@ end)
 Hyper:bind({}, 'z', nil, function()
   if hs.application.find('us.zoom.xos') then
     hs.application.launchOrFocusByBundleID('us.zoom.xos')
-  elseif hs.application.find('com.microsoft.teams') then
-    hs.application.launchOrFocusByBundleID('com.microsoft.teams')
   else
     brave.jump("meet.google.com|hangouts.google.com.call")
   end
