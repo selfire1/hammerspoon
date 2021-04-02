@@ -67,16 +67,16 @@ spoon.Headspace:start()
 Hyper:bind({}, 'space', nil, spoon.Headspace.choose)
 
 -- Hammerspoon bindings
-hyper:bind({}, 'h', nil, function()
+Hyper:bind({}, 'h', nil, function()
 hs.application.launchOrFocusByBundleID('org.hammerspoon.Hammerspoon')
 end)
 
-hyper:bind({}, 'r', nil, function()
+Hyper:bind({}, 'r', nil, function()
   hs.reload()
 end)
 
 -- Copy markdown link and tab title from brave
-hyper:bind({}, 'k', nil, function()
+Hyper:bind({}, 'k', nil, function()
   return hs.osascript.applescript(
   [[
   tell application "Brave Browser" to set vTitle to (title of active tab of front window)
