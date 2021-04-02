@@ -6,7 +6,8 @@ table.insert(Config.spaces, {
   togglProj = Config.projects.write,
   togglDescr = "Transferring Notes from Kindle or Evernote",
   whitelist = {'writing', 'transfer'},
-  funcs = "transfer"
+  funcs = "transfer",
+  intentRequired = true
 })
 
 Config.funcs.transfer = {
