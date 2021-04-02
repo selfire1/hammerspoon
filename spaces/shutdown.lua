@@ -1,5 +1,3 @@
-local toggl = require('toggl')
-
 table.insert(Config.spaces, {
   text = "Shutdown",
   subText = "Screentime is done, shut down everything.",
@@ -8,7 +6,7 @@ table.insert(Config.spaces, {
 
 Config.funcs.shutdown = {
   setup = function()
-    toggl.stopToggl()
+    spoon.Headspace.stopToggl()
     hs.settings.clear("headspace")
 
     -- shut down everything
