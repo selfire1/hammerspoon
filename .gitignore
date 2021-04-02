@@ -1,5 +1,6 @@
 .secrets.json
 *.code-workspace
+spoons/.DS_Store
 .DS_Store
 .vscode
 spaces/ys_work.lua
