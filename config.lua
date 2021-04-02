@@ -1,4 +1,5 @@
 return {
+  applications = {
   ['com.todoist.mac.Todoist'] = {
     bundleID = 'com.todoist.mac.Todoist',
     hyperKey = 't',
@@ -117,6 +118,7 @@ return {
     hyperKey = 'a',
     tags = {'coding'}
   }
+}
 }
 --
 -- config.domains = {
