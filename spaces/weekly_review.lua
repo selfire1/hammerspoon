@@ -1,4 +1,3 @@
-local obsidian = require "obsidian"
 table.insert(Config.spaces, {
   text = "Weekly Review",
   subText = "Plan the week in Todoist.",
@@ -12,7 +11,7 @@ table.insert(Config.spaces, {
 Config.funcs.weekly_review = {
   setup = function()
     -- Open Obsidian workspace "weekly_review"
-    obsidian.openWorkspace("weekly_review")
+    Obsidian.openWorkspace("weekly_review")
     -- Move Obsidian to the left
     local obsidian = hs.application("Obsidian")
     obsidian:mainWindow():moveToUnit(hs.layout.left50)

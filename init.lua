@@ -53,11 +53,11 @@ local autolayout = require('autolayout')
       autolayout.start(Config)
       Hyper:bind({}, 'return', nil, autolayout.autoLayout)
 
-local brave = require('brave')
-      brave.start(Config)
+Brave = require('brave')
+Brave.start(Config)
 
-local obsidian = require('obsidian')
-      obsidian.start(Config)
+Obsidian = require('obsidian')
+Obsidian.start(Config)
 
 
 spoon.Headspace:start()

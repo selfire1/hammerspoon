@@ -1,4 +1,3 @@
-local obsidian = require "obsidian"
 table.insert(Config.spaces, {
   text = "Transfer",
   subText = "Outline, transfer and discover new and old ideas.",
@@ -13,7 +12,7 @@ table.insert(Config.spaces, {
 Config.funcs.transfer = {
   setup = function()
     -- Open workspace "Transfer" in Obsidian
-    obsidian.openWorkspace("transfer")
+    Obsidian.openWorkspace("transfer")
     -- Open Obsidian and move to right half
     local obsidian = hs.application("Obsidian")
     obsidian:mainWindow():moveToUnit(hs.layout.right50)

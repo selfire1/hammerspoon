@@ -26,6 +26,6 @@ teardown = function()
     hs.application.find('org.epichrome.eng.ProtonMail'):kill()
     hs.application.find('com.hnc.Discord'):kill()
     -- Close tabs by domain
-    brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
+    Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
 end
 }
