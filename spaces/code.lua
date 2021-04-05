@@ -6,6 +6,7 @@ table.insert(Config.spaces, {
   whitelist = {'coding', 'browser', 'notes', 'tasks'},
   togglProj = Config.projects.code,
   intentRequired = true,
+  intentSuggestions = hs.settings.get("secrets").intentCode,
   funcs = 'code'
 })
 
