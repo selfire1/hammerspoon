@@ -2,7 +2,6 @@ table.insert(Config.spaces, {
   text = "Code",
   subText = "Grow in understanding of coding.",
   image = hs.image.imageFromAppBundle('com.github.atom'),
-  launch = {'coding'},
   whitelist = {'coding', 'browser', 'notes', 'tasks'},
   togglProj = Config.projects.code,
   intentRequired = true,
