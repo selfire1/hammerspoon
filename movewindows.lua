@@ -4,9 +4,9 @@ movewindows.start = function ()
     
     
     -- Keybindings
-    ctrl_cmd = {"cmd", "ctrl"}
-    cmd_alt = {"cmd", "alt"}
-    shift_ctrl_cmd = {"shift", "cmd", "ctrl"}
+    local ctrl_cmd = {"cmd", "ctrl"}
+    local cmd_alt = {"cmd", "alt"}
+    local shift_ctrl_cmd = {"shift", "cmd", "ctrl"}
     
     -- Loading Spoons
     hs.loadSpoon("MiroWindowsManager")
