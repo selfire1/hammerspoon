@@ -110,7 +110,7 @@ return {
   },
   ['com.apple.Terminal'] = {
     bundleID = 'com.apple.Terminal',
-    hyperKey = 'h',
+    hyperKey = 'i',
     tags = {'coding'}
   },
   ['com.microsoft.VSCode'] = {
