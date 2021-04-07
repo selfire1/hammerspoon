@@ -4,7 +4,7 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('com.amazon.Kindle'),
   togglProj = Config.projects.write,
   togglDescr = "Transferring Notes from Kindle or Evernote",
-  whitelist = {'writing', 'transfer', 'browser'},
+  whitelist = {'writing', 'transfer'},
   funcs = "transfer",
   intentRequired = true
 })
@@ -12,8 +12,9 @@ table.insert(Config.spaces, {
 Config.funcs.transfer = {
   setup = function()
     -- Open Kindle app hidden
-    hs.application.open('com.amazon.Kindle', 10, 10)
+    hs.application.open('com.amazon.Kindle', 20, 20)
     hs.application.find('com.amazon.Kindle'):hide()
+
     -- Open workspace "Transfer" in Obsidian
     Obsidian.openWorkspace("transfer")
     -- Open Obsidian and move to right half
@@ -21,9 +22,9 @@ Config.funcs.transfer = {
     obsidian:mainWindow():moveToUnit(hs.layout.right50)
     
     -- Open kindle notes website
-    hs.urlevent.openURL("https://read.amazon.com/notebook")
+    hs.application.open('com.brave.Browser', 20, 20)
+    hs.urlevent.openURLWithBundle("https://read.amazon.com/notebook", 'com.brave.Browser')
     -- Open Kindle extractor plugin
-    hs.application.launchOrFocusByBundleID("com.brave.Browser")
     hs.eventtap.keyStroke({"alt"}, "x")
     -- Move to left
     local brave = hs.application("Brave Browser")
