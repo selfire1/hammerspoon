@@ -1,7 +1,7 @@
 table.insert(Config.spaces, {
-  text = "Quick tasks",
+  text = "Shallow",
   subText = "Chip away on shallow work.",
-  image = hs.image.imageFromAppBundle('com.todoist.mac.Todoist'),
+  image = hs.image.imageFromAppBundle('com.apple.exposelauncher'),
   togglProj = Config.projects.shallow,
   blacklist = {'distraction', 'coding', 'work'},
   funcs = "shallow",
