@@ -4,27 +4,36 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('com.amazon.Kindle'),
   togglProj = Config.projects.write,
   togglDescr = "Transferring Notes from Kindle or Evernote",
-  whitelist = {'writing', 'transfer'},
+  whitelist = {'writing', 'transfer', 'browser'},
   funcs = "transfer",
   intentRequired = true
 })
 
 Config.funcs.transfer = {
   setup = function()
+    -- Open Kindle app hidden
+    hs.application.open('com.amazon.Kindle', 10, 10)
+    hs.application.find('com.amazon.Kindle'):hide()
     -- Open workspace "Transfer" in Obsidian
     Obsidian.openWorkspace("transfer")
     -- Open Obsidian and move to right half
     local obsidian = hs.application("Obsidian")
     obsidian:mainWindow():moveToUnit(hs.layout.right50)
     
-    -- Open Kindle and move to left half
-    hs.application.open('com.amazon.Kindle', 10, 10)
-    local kindle = hs.application("Kindle")
-    kindle:mainWindow():moveToUnit(hs.layout.left50)
+    -- Open kindle notes website
+    hs.urlevent.openURL("https://read.amazon.com/notebook")
+    -- Open Kindle extractor plugin
+    hs.application.launchOrFocusByBundleID("com.brave.Browser")
+    hs.eventtap.keyStroke({"alt"}, "x")
+    -- Move to left
+    local brave = hs.application("Brave Browser")
+    brave:mainWindow():moveToUnit(hs.layout.left50)
   end,
   teardown = function()
     -- Quit Kindle and Obsidian
     hs.application.find('com.amazon.Kindle'):kill()
     hs.application.find('md.obsidian'):kill()
+    -- Close Brave tab
+    Brave.killTabsByDomain("read.amazon.com")
   end
   }
