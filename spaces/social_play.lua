@@ -14,7 +14,9 @@ setup = function()
 end,
 teardown = function()
     -- Quit Discord and GeForce NOW
-    hs.application.find('com.hnc.Discord'):kill()
-    hs.application.find("GeForceNOW"):kill()
+    hs.application.find(
+      'com.hnc.Discord',
+      "GeForceNOW"
+    ):kill()
 end
 }

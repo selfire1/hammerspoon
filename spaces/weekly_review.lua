@@ -23,7 +23,9 @@ Config.funcs.weekly_review = {
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
-    hs.application.find('com.todoist.mac.Todoist'):kill()
-    hs.application.find('md.obsidian'):kill()
+    hs.application.find(
+      'com.todoist.mac.Todoist',
+      'md.obsidian'
+    ):kill()
   end
   }

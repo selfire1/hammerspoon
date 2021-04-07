@@ -19,5 +19,11 @@ Config.funcs.deep = {
     -- Quit Todoist and ProtonMail
     hs.application.find('com.todoist.mac.Todoist'):kill()
     hs.application.find('org.epichrome.eng.ProtonMail'):kill()
+
+    hs.application.find(
+    'com.todoist.mac.Todoist', 
+    'org.epichrome.eng.ProtonMail')
+    :kill()
+
   end
 }

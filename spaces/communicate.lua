@@ -20,11 +20,13 @@ setup = function()
 end,
 teardown = function()
     -- Quit a bunch of apps
-    hs.application.find('desktop.WhatsApp'):kill()
-    hs.application.find('com.facebook.archon'):kill()
-    hs.application.find('org.epichrome.eng.Standard Gmail'):kill()
-    hs.application.find('org.epichrome.eng.ProtonMail'):kill()
-    hs.application.find('com.hnc.Discord'):kill()
+    hs.application.find(
+    'desktop.WhatsApp', 
+    'com.facebook.archon',
+    'org.epichrome.eng.Standard Gmail',
+    'org.epichrome.eng.ProtonMail',
+    'com.hnc.Discord')
+    :kill()
     -- Close tabs by domain
     Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
 end
