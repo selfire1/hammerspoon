@@ -19,7 +19,7 @@ return {
   ['com.brave.Browser'] = {
     bundleID = 'com.brave.Browser',
     hyperKey = 'b',
-    tags = {'browser', 'research'}
+    tags = {'browser', 'research', 'transfer'}
   },
   ['desktop.WhatsApp'] = {
     bundleID = 'desktop.WhatsApp',
@@ -116,6 +116,11 @@ return {
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
     hyperKey = 'a',
+    tags = {'coding'}
+  },
+  ['com.toggl.toggldesktop.TogglDesktop'] = {
+    bundleID = 'com.toggl.toggldesktop.TogglDesktop',
+    hyperKey = 'd',
     tags = {'coding'}
   }
 }
