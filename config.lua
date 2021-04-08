@@ -121,7 +121,7 @@ return {
   ['com.toggl.toggldesktop.TogglDesktop'] = {
     bundleID = 'com.toggl.toggldesktop.TogglDesktop',
     hyperKey = 'd',
-    tags = {'coding'}
+    whitelisted = true
   }
 }
 }
