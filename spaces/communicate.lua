@@ -19,14 +19,20 @@ setup = function()
     messenger:mainWindow():moveToUnit(hs.layout.right50)
 end,
 teardown = function()
-    -- Quit a bunch of apps
-    hs.application.find(
+  -- Quit a bunch of apps
+  local toQuit = { 
     'desktop.WhatsApp', 
     'com.facebook.archon',
     'org.epichrome.eng.Standard Gmail',
     'org.epichrome.eng.ProtonMail',
-    'com.hnc.Discord')
-    :kill()
+    'com.hnc.Discord' }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
+    
     -- Close tabs by domain
     Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
 end

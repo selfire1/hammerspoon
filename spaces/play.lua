@@ -10,6 +10,13 @@ table.insert(Config.spaces, {
 
 Config.funcs.play = {
     teardown = function ()
-        hs.application.find("GeForceNOW"):kill()
+      -- Quit GeForceNOW
+    local toQuit = { 'GeForceNOW' }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
     end
 }

@@ -23,6 +23,12 @@ Config.funcs.journal = {
     end,
     teardown = function ()
         -- Quit Obsidian
-        hs.application.find('md.obsidian'):kill()
+        local toQuit = { 'md.obsidian' }
+
+        for i = 1, #toQuit do
+        if hs.application.find(toQuit[i]) ~= nil then
+        hs.application.find(toQuit[i]):kill()
+        end
+        end
     end
 }

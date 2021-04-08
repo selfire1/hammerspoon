@@ -11,19 +11,18 @@ table.insert(Config.spaces, {
 Config.funcs.deep = {
   setup = function()
     -- Open Todoist and maximise it
-    hs.application.open('com.todoist.mac.Todoist')
+    hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application("Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.maximized)
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail
-    hs.application.find('com.todoist.mac.Todoist'):kill()
-    hs.application.find('org.epichrome.eng.ProtonMail'):kill()
+    local toQuit = { 'com.todoist.mac.Todoist', 'org.epichrome.eng.ProtonMail' }
 
-    hs.application.find(
-    'com.todoist.mac.Todoist', 
-    'org.epichrome.eng.ProtonMail')
-    :kill()
-
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
   end
 }

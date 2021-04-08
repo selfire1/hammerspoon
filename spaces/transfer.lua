@@ -32,7 +32,14 @@ Config.funcs.transfer = {
   end,
   teardown = function()
     -- Quit Kindle and Obsidian
-    hs.application.find('md.obsidian', 'com.amazon.Kindle'):kill()
+    local toQuit = { 'md.obsidian', 'com.amazon.Kindle' }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
+
     -- Close Brave tab
     Brave.killTabsByDomain("read.amazon.com")
   end

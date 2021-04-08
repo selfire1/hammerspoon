@@ -17,9 +17,14 @@ Config.funcs.shallow = {
     end,
     teardown = function ()
         -- Quit Todoist and Brave
-    hs.application.find(
-        'com.todoist.mac.Todoist',
-        'com.brave.Browser'
-    ):kill()
+        local toQuit = { 'com.todoist.mac.Todoist',
+        'com.brave.Browser' }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
+
     end
 }

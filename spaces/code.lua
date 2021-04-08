@@ -15,7 +15,14 @@ Config.funcs.code = {
     hs.application.open('com.microsoft.VSCode')
   end,
   teardown = function()
-    -- Quit VS Code
-    hs.application.find('com.microsoft.VSCode'):kill()
+
+    -- Quit VSCode
+    local toQuit = { 'com.microsoft.VSCode' }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
   end
 }

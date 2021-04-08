@@ -14,9 +14,14 @@ setup = function()
 end,
 teardown = function()
     -- Quit Discord and GeForce NOW
-    hs.application.find(
-      'com.hnc.Discord',
-      "GeForceNOW"
-    ):kill()
+    local toQuit = { 'com.hnc.Discord',
+      "GeForceNOW" }
+
+    for i = 1, #toQuit do
+      if hs.application.find(toQuit[i]) ~= nil then
+      hs.application.find(toQuit[i]):kill()
+    end
+    end
+
 end
 }
