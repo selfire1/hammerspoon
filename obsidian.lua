@@ -19,7 +19,7 @@ module.blank = function()
     hs.urlevent.openURLWithBundle("obsidian://advanced-uri?vault=Vault&workspace=blank", 'md.obsidian')
 end
 
-module.openWorkspace = function (workspace)
+module.openWorkspace = function(workspace)
     -- Open Obsidian
     hs.application.open('md.obsidian', 10, 10)
     -- Open workspace via "Obsidian Advanced URI" plugin
@@ -27,7 +27,7 @@ module.openWorkspace = function (workspace)
 
 end
 
-module.today = function ()
+module.today = function()
     -- Open Obsidian in blank
     module.blank()
     -- Open today's journal
