@@ -4,7 +4,6 @@
 
 -- Plugins required:
 -- * "Obsidian Advanced URI" plugin (https://github.com/Vinzent03/obsidian-advanced-uri)
--- * "Natural Language Dates" plugin (https://github.com/argenos/nldates-obsidian)
 
 local module = {}
 
@@ -32,7 +31,7 @@ module.today = function ()
     -- Open Obsidian in blank
     module.blank()
     -- Open today's journal
-    hs.urlevent.openURLWithBundle('obsidian://nldates?day=today', 'md.obsidian')
+    hs.urlevent.openURLWithBundle('obsidian://advanced-uri?vault=Vault&daily=true', 'md.obsidian')
 end
 
 
