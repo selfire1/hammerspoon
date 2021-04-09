@@ -13,7 +13,9 @@ Config.funcs.deep = {
     -- Open Todoist and maximise it
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application("Todoist")
+    if todoist ~= nil then
     todoist:mainWindow():moveToUnit(hs.layout.maximized)
+    end
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail

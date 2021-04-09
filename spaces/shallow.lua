@@ -11,9 +11,11 @@ table.insert(Config.spaces, {
 Config.funcs.shallow = {
     setup = function ()
         -- Open Todoist and maximise it
-    hs.application.open('com.todoist.mac.Todoist')
+    hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application("Todoist")
-    todoist:mainWindow():moveToUnit(hs.layout.maximized)
+    if todoist ~= nil then
+      todoist:mainWindow():moveToUnit(hs.layout.maximized)
+    end
     end,
     teardown = function ()
         -- Quit Todoist and Brave

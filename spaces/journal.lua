@@ -12,12 +12,13 @@ Config.funcs.journal = {
     setup = function ()
         -- Open Obsidian in workspace "blank"
         -- Commented out because plugin is yet to be released!
-        -- Obsidian.blank()
+        Obsidian.blank()
 
         -- Maximise Obsidian
         local obsidian = hs.application("Obsidian")
+        if obsidian ~= nil then
         obsidian:mainWindow():moveToUnit(hs.layout.maximized)
-        
+        end
         -- Open today's note via nl-dates plugin URI (https://github.com/argenos/nldates-obsidian)
         Obsidian.today()
     end,
