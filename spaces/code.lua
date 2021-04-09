@@ -13,16 +13,17 @@ Config.funcs.code = {
   setup = function()
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
-  end,
-  teardown = function()
-
-    -- Quit VSCode
-    local toQuit = { 'com.microsoft.VSCode' }
-
-    for i = 1, #toQuit do
-      if hs.application.find(toQuit[i]) ~= nil then
-      hs.application.find(toQuit[i]):kill()
-    end
-    end
   end
+  -- ,
+  -- teardown = function()
+
+  --   -- Quit VSCode
+  --   local toQuit = { 'com.microsoft.VSCode' }
+
+  --   for i = 1, #toQuit do
+  --     if hs.application.find(toQuit[i]) ~= nil then
+  --     hs.application.find(toQuit[i]):kill()
+  --   end
+  --   end
+  -- end
 }

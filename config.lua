@@ -116,7 +116,8 @@ return {
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
     hyperKey = 'a',
-    tags = {'coding'}
+    tags = {'coding'},
+    whitelisted = true
   },
   ['com.toggl.toggldesktop.TogglDesktop'] = {
     bundleID = 'com.toggl.toggldesktop.TogglDesktop',
