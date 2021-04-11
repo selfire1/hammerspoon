@@ -15,6 +15,6 @@ Config.funcs.binge = {
   end,
   teardown = function()
     -- Close YouTube und Netflix tabs
-    Brave.killTabsByDomain("youtube.com|netflix.com")
+    Brave.killTabsByDomain("youtube.com|netflix.com|disneyplus.com")
   end
 }
