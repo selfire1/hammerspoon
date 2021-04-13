@@ -23,8 +23,7 @@ module.openWorkspace = function(workspace)
     -- Open Obsidian
     hs.application.open('md.obsidian', 10, 10)
     -- Open workspace via "Obsidian Advanced URI" plugin
-    hs.urlevent.openURLWithBundle("obsidian://advanced-uri?vault=Vault&workspace=" .. string.gsub(workspace, "%s+", "%20") , 'md.obsidian')
-
+    hs.urlevent.openURLWithBundle("obsidian://advanced-uri?vault=Vault&workspace=" .. string.gsub(workspace, "%s+", "%20") , "md.obsidian")
 end
 
 module.today = function()
