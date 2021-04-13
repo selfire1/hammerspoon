@@ -5,7 +5,9 @@ table.insert(Config.spaces, {
   togglProj = Config.projects.binge,
   togglDescr = "Binge",
   whitelist = {'video', 'browser'},
-  funcs = 'binge'
+  funcs = 'binge',
+  intentRequired = true,
+  intentSuggestions = hs.settings.get("secrets").intentBinge
 })
 
 Config.funcs.binge = {
