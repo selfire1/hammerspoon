@@ -13,12 +13,12 @@ Config.funcs.weekly_review = {
     -- Open Obsidian workspace "weekly_review"
     Obsidian.openWorkspace("weekly_review")
     -- Move Obsidian to the left
-    local obsidian = hs.application("Obsidian")
+    local obsidian = hs.application.find("Obsidian")
     obsidian:mainWindow():moveToUnit(hs.layout.left50)
 
     -- Open Todoist and move it to the right
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
-    local todoist = hs.application("Todoist")
+    local todoist = hs.application.find("Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.right50)
   end,
   teardown = function()

@@ -12,7 +12,7 @@ Config.funcs.shallow = {
     setup = function ()
         -- Open Todoist and maximise it
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
-    local todoist = hs.application("Todoist")
+    local todoist = hs.application.find("Todoist")
     if todoist ~= nil then
       todoist:mainWindow():moveToUnit(hs.layout.maximized)
     end

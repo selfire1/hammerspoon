@@ -15,7 +15,7 @@ Config.funcs.journal = {
         Obsidian.blank()
 
         -- Maximise Obsidian
-        local obsidian = hs.application("Obsidian")
+        local obsidian = hs.application.find("Obsidian")
         if obsidian ~= nil then
         obsidian:mainWindow():moveToUnit(hs.layout.maximized)
         end

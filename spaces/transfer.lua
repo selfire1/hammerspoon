@@ -18,7 +18,7 @@ Config.funcs.transfer = {
     -- Open workspace "Transfer" in Obsidian
     Obsidian.openWorkspace("transfer")
     -- Open Obsidian and move to right half
-    local obsidian = hs.application("Obsidian")
+    local obsidian = hs.application.find("Obsidian")
     obsidian:mainWindow():moveToUnit(hs.layout.right50)
     
     -- Open kindle notes website
@@ -27,7 +27,7 @@ Config.funcs.transfer = {
     -- Open Kindle extractor plugin
     hs.eventtap.keyStroke({"alt"}, "x")
     -- Move to left
-    local brave = hs.application("Brave Browser")
+    local brave = hs.application.find('com.brave.Browser')
     brave:mainWindow():moveToUnit(hs.layout.left50)
   end,
   teardown = function()
