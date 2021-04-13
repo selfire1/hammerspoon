@@ -24,5 +24,7 @@ Config.funcs.code = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    Brave.killTabsByDomain("github.com|hammerspoon.org")
   end
 }
