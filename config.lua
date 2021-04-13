@@ -46,6 +46,7 @@ return {
   ['com.fluidapp.FluidApp2.YWAM Gmail'] = {
     bundleID = 'com.fluidapp.FluidApp2.YWAM Gmail',
     tags = {'work'},
+    hyperKey = 'y',
     rules = {
       {nil, 2, hs.layout.right50}
     }
@@ -122,6 +123,11 @@ return {
     bundleID = 'com.toggl.toggldesktop.TogglDesktop',
     hyperKey = 'd',
     whitelisted = true
+  },
+  ['com.google.Chrome.app.chfbpgnooceecdoohagngmjnndbbaeip'] = {
+    bundleID = 'com.google.Chrome.app.chfbpgnooceecdoohagngmjnndbbaeip',
+    hyperKey = 'x',
+    tags = {'work'}
   }
 }
 }
