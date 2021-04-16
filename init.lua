@@ -59,6 +59,9 @@ Brave.start(Config)
 Obsidian = require('obsidian')
 Obsidian.start(Config)
 
+Sorted = require('sorted')
+Sorted.start(Config)
+
 
 spoon.Headspace:start()
                :loadConfig(Config)
