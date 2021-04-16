@@ -16,6 +16,9 @@ Config.funcs.shallow = {
     if todoist ~= nil then
       todoist:mainWindow():moveToUnit(hs.layout.maximized)
     end
+
+    Sorted.openTag(hs.settings.get("secrets").sorted.tags.shallow)
+
     end,
     teardown = function ()
         -- Quit Todoist and Brave
@@ -27,6 +30,8 @@ Config.funcs.shallow = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    Sorted.today()
 
     end
 }
