@@ -79,7 +79,7 @@ return {
   },
   ['com.spotify.client'] = {
     bundleID = 'com.spotify.client',
-    hyperKey = 's'
+    hyperKey = 'p'
   },
   ['md.obsidian'] = {
     bundleID = 'md.obsidian',
@@ -128,7 +128,13 @@ return {
     bundleID = 'com.google.Chrome.app.chfbpgnooceecdoohagngmjnndbbaeip',
     hyperKey = 'x',
     tags = {'work'}
+  },
+  ['com.staysorted.Sorted'] = {
+    bundleID = 'com.staysorted.Sorted',
+    hyperKey = 's',
+    tags = {'work'}
   }
+
 }
 }
 --
