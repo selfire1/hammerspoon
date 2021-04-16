@@ -132,7 +132,7 @@ return {
   ['com.staysorted.Sorted'] = {
     bundleID = 'com.staysorted.Sorted',
     hyperKey = 's',
-    tags = {'work'}
+    whitelisted = true
   }
 
 }
