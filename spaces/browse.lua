@@ -12,6 +12,10 @@ Config.funcs.browse = {
   setup = function()
     -- Open Brave
     hs.application.open('com.brave.Browser')
+
+    -- Open Sorted on tag
+    Sorted.openTag(hs.settings.get("secrets").sorted.tags.binge)
+    
   end,
   teardown = function ()
     -- Quit Brave
@@ -22,5 +26,7 @@ Config.funcs.browse = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+    -- Open Sorted in today view
+    Sorted.today()
   end
 }

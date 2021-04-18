@@ -21,5 +21,8 @@ Config.funcs.write = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    -- Open Sorted in today view
+    Sorted.today()
   end
   }

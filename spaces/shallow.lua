@@ -10,13 +10,8 @@ table.insert(Config.spaces, {
 
 Config.funcs.shallow = {
     setup = function ()
-        -- Open Todoist and maximise it
-    hs.application.open('com.todoist.mac.Todoist', 10, 10)
-    local todoist = hs.application.find("Todoist")
-    if todoist ~= nil then
-      todoist:mainWindow():moveToUnit(hs.layout.maximized)
-    end
-
+    
+    -- Open Sorted on tag
     Sorted.openTag(hs.settings.get("secrets").sorted.tags.shallow)
 
     end,
@@ -31,6 +26,7 @@ Config.funcs.shallow = {
     end
     end
 
+    -- Open Sorted in today view
     Sorted.today()
 
     end

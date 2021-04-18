@@ -10,12 +10,8 @@ table.insert(Config.spaces, {
 
 Config.funcs.deep = {
   setup = function()
-    -- Open Todoist and maximise it
-    hs.application.open('com.todoist.mac.Todoist', 10, 10)
-    local todoist = hs.application.find("Todoist")
-    if todoist ~= nil then
-    todoist:mainWindow():moveToUnit(hs.layout.maximized)
-    end
+    -- Open Sorted on tag
+    Sorted.openTag(hs.settings.get("secrets").sorted.tags.deep)
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail
@@ -26,5 +22,8 @@ Config.funcs.deep = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    -- Open Sorted in today view
+    Sorted.today()
   end
 }

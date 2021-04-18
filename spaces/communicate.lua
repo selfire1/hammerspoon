@@ -17,6 +17,9 @@ setup = function()
     hs.application.open('com.facebook.archon')
     local messenger = hs.application.find("Messenger")
     messenger:mainWindow():moveToUnit(hs.layout.right50)
+
+    -- Open Sorted on tag
+    Sorted.openTag(hs.settings.get("secrets").sorted.tags.communicate)
 end,
 teardown = function()
   -- Quit a bunch of apps
@@ -35,5 +38,8 @@ teardown = function()
     
     -- Close tabs by domain
     Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
+
+    -- Open Sorted in today view
+    Sorted.today()
 end
 }
