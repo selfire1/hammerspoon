@@ -6,7 +6,8 @@ return {
     tags = {'review', 'tasks'},
     layouts = {
       {nil, 2, hs.layout.maximized}
-    }
+    },
+    whitelisted = true
   },
   ['com.hnc.Discord'] = {
     bundleID = 'com.hnc.Discord',
