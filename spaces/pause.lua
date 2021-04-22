@@ -21,7 +21,6 @@ Config.funcs.pause = {
   end,
   teardown = function()
     hs.application.launchOrFocusByBundleID("com.toggl.toggldesktop.TogglDesktop")
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
 }

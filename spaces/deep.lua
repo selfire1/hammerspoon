@@ -10,8 +10,7 @@ table.insert(Config.spaces, {
 
 Config.funcs.deep = {
   setup = function()
-    -- Open Sorted on tag
-    Sorted.openTag(hs.settings.get("secrets").sorted.tags.deep)
+    
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail
@@ -23,7 +22,6 @@ Config.funcs.deep = {
     end
     end
 
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
 }

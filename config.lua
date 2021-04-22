@@ -112,7 +112,7 @@ return {
   ['com.apple.Terminal'] = {
     bundleID = 'com.apple.Terminal',
     hyperKey = 'i',
-    tags = {'coding'}
+    tags = {'coding', 'transfer'}
   },
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
@@ -130,9 +130,7 @@ return {
     tags = {'work'}
   },
   ['com.staysorted.Sorted'] = {
-    bundleID = 'com.staysorted.Sorted',
-    hyperKey = 's',
-    whitelisted = true
+    bundleID = 'com.staysorted.Sorted'
   }
 
 }

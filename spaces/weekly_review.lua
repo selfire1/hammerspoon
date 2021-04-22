@@ -17,9 +17,8 @@ Config.funcs.weekly_review = {
     obsidian:mainWindow():moveToUnit(hs.layout.left50)
 
     -- Open Todoist and move it to the right
-    Sorted.today()
-    local sorted = hs.application.find("com.staysorted.Sorted")
-    sorted:mainWindow():moveToUnit(hs.layout.right50)
+    local todoist = hs.application.find("com.todoist.mac.Todoist")
+    todoist:mainWindow():moveToUnit(hs.layout.right50)
   end,
   teardown = function()
     -- Quit Todoist and Obsidian

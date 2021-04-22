@@ -11,8 +11,6 @@ table.insert(Config.spaces, {
 Config.funcs.shallow = {
     setup = function ()
     
-    -- Open Sorted on tag
-    Sorted.openTag(hs.settings.get("secrets").sorted.tags.shallow)
 
     end,
     teardown = function ()
@@ -26,8 +24,7 @@ Config.funcs.shallow = {
     end
     end
 
-    -- Open Sorted in today view
-    Sorted.today()
+    
 
     end
 }

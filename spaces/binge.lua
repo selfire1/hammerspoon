@@ -15,13 +15,10 @@ Config.funcs.binge = {
     -- Open YouTube with Brave
     hs.urlevent.openURLWithBundle("https://www.youtube.com/feed/subscriptions", "com.brave.Browser")
     
-    -- Open Sorted on tag
-    Sorted.openTag(hs.settings.get("secrets").sorted.tags.binge)
   end,
   teardown = function()
     -- Close YouTube und Netflix tabs
     Brave.killTabsByDomain("youtube.com|netflix.com|disneyplus.com")
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
 }

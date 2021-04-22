@@ -43,7 +43,6 @@ Config.funcs.transfer = {
     -- Close Brave tab
     Brave.killTabsByDomain("read.amazon.com")
 
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
   }

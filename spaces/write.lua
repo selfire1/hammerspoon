@@ -22,7 +22,6 @@ Config.funcs.write = {
     end
     end
 
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
   }

@@ -14,8 +14,6 @@ Config.funcs.code = {
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
 
-    -- Open Sorted on tag
-    Sorted.openTag(hs.settings.get("secrets").sorted.tags.code)
   end,
   teardown = function()
 
@@ -30,7 +28,6 @@ Config.funcs.code = {
 
     Brave.killTabsByDomain("github.com|hammerspoon.org")
 
-    -- Open Sorted in today view
-    Sorted.today()
+    
   end
 }
