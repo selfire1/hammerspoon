@@ -20,6 +20,15 @@ Config.funcs.weekly_review = {
     local todoist = hs.application.find("com.todoist.mac.Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.right50)
 
+    -- Clean up ticked items
+    -- This runs a little script that unticks items in Obsidian:
+    -- perl -pi -e 's/\[x\]/[ ]/g' /path/to/file.md
+    hs.osascript.applescript(
+      [[
+        do shell script quoted form of "./Users/Joschua/Documents/Projects/Scripts/untick.sh"
+      ]]
+    )
+
     -- Add template to clipboard
     return hs.osascript.applescript(
       [[
@@ -44,7 +53,6 @@ display notification "Weekly Reflection in clipboard." with title "Weekly Review
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
-
     local toQuit = { 'com.todoist.mac.Todoist',
       'md.obsidian', 'com.staysorted.Sorted' }
 
