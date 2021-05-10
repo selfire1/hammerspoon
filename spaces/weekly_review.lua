@@ -1,6 +1,6 @@
 table.insert(Config.spaces, {
   text = "Weekly Review",
-  subText = "Plan the week in Todoist.",
+  subText = "Plan the week.",
   image = hs.image.imageFromAppBundle('com.apple.iCal'),
   togglProj = Config.projects.deep,
   togglDescr = "Weekly Review",
@@ -19,6 +19,28 @@ Config.funcs.weekly_review = {
     -- Open Todoist and move it to the right
     local todoist = hs.application.find("com.todoist.mac.Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.right50)
+
+    -- Add template to clipboard
+    return hs.osascript.applescript(
+      [[
+set weeknum to do shell script "date +%V"
+
+set the clipboard to "### Week " & weeknum & "
+**How did my goals go last week?**
+* 
+
+**Which *essential* things am I *under*-investing in?**
+* 
+*What is an appropriate time?*
+* 
+
+**Which *non-essential* thing am I *over*-investing in?**
+* 
+*What is an appropriate time?*"
+
+display notification "Weekly Reflection in clipboard." with title "Weekly Review"
+      ]]
+    )
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
