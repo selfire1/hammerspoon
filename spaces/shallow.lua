@@ -10,8 +10,7 @@ table.insert(Config.spaces, {
 
 Config.funcs.shallow = {
     setup = function ()
-    
-
+    Todoist.searchAndOpen('shallow')
     end,
     teardown = function ()
         -- Quit Todoist and Brave

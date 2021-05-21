@@ -59,8 +59,8 @@ Brave.start(Config)
 Obsidian = require('obsidian')
 Obsidian.start(Config)
 
-Sorted = require('sorted')
-Sorted.start(Config)
+Todoist = require('todoist')
+Todoist.start(Config)
 
 
 spoon.Headspace:start()
