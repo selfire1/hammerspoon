@@ -1,0 +1,6 @@
+[submodule "Spoons/Headspace.spoon"]
+	path = Spoons/Headspace.spoon
+	url = https://github.com/evantravers/Headspace.spoon.git
+[submodule "Spoons/Hyper.spoon"]
+	path = Spoons/Hyper.spoon
+	url = https://github.com/evantravers/Hyper.spoon.git
