@@ -10,7 +10,8 @@ table.insert(Config.spaces, {
 
 Config.funcs.deep = {
   setup = function()
-    
+    -- Open deep tag in Todoist
+    Todoist.searchAndOpen('deep')
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail

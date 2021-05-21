@@ -14,7 +14,8 @@ Config.funcs.binge = {
   setup = function()
     -- Open YouTube with Brave
     hs.urlevent.openURLWithBundle("https://www.youtube.com/feed/subscriptions", "com.brave.Browser")
-    
+    -- Open binge tag in Todoist
+    Todoist.searchAndOpen('binge')
   end,
   teardown = function()
     -- Close YouTube und Netflix tabs

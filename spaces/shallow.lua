@@ -10,6 +10,7 @@ table.insert(Config.spaces, {
 
 Config.funcs.shallow = {
     setup = function ()
+      -- Open shallow tag in Todoist
     Todoist.searchAndOpen('shallow')
     end,
     teardown = function ()

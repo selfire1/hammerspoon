@@ -11,6 +11,9 @@ Config.funcs.write = {
   setup = function()
     -- Open Obsidian workspace "weekly_review"
     Obsidian.openWorkspace("blank")
+
+    -- Open write tag in Todoist
+    Todoist.searchAndOpen('write')
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
