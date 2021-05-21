@@ -13,7 +13,7 @@ module.searchAndOpen = function(query)
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
     -- Enter query
     hs.osascript.applescript([[
-        set delayTimer to "0"
+        set delayTimer to "0.1"
 
 tell application "System Events"
 	activate application "Todoist"
