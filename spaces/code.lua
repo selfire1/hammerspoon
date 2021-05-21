@@ -13,7 +13,8 @@ Config.funcs.code = {
   setup = function()
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
-
+    -- Open code tag in Todoist
+    Todoist.searchAndOpen('code')
   end,
   teardown = function()
 
