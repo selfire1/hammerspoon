@@ -108,6 +108,7 @@ return {
   },
   ['org.whispersystems.signal-desktop'] = {
     bundleID = 'org.whispersystems.signal-desktop',
+    hyperKey = 'e',
     tags = {'distraction', 'communication'}
   },
   ['com.apple.Terminal'] = {
