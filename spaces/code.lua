@@ -9,16 +9,18 @@ table.insert(Config.spaces, {
   funcs = 'code'
 })
 
+
 Config.funcs.code = {
-  setup = function()
-    -- Open VS Code
-    hs.application.open('com.microsoft.VSCode')
+  setup = function ()
     -- Open code tag in Todoist
     Todoist.searchAndOpen('code')
-  end,
-  teardown = function()
 
-    -- Quit VSCode
+    -- Open VS Code
+    hs.application.open('com.microsoft.VSCode')
+  end,
+
+  teardown = function ()
+        -- Quit VS Code
     local toQuit = { 'com.microsoft.VSCode' }
 
     for i = 1, #toQuit do
@@ -26,9 +28,5 @@ Config.funcs.code = {
       hs.application.find(toQuit[i]):kill()
     end
     end
-
-    Brave.killTabsByDomain("github.com|hammerspoon.org")
-
-    
   end
 }
