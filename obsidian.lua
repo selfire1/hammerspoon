@@ -33,5 +33,13 @@ module.today = function()
     hs.urlevent.openURLWithBundle('obsidian://advanced-uri?vault=Vault&daily=true', 'md.obsidian')
 end
 
+module.untick = function(url)
+
+    hs.application.open('md.obsidian', 10, 10)
+    -- Open workspace via "Obsidian Advanced URI" plugin
+    hs.urlevent.openURLWithBundle(url .. "&search=[x]&replace=[%20]" , "md.obsidian")
+
+end
+
 
 return module
