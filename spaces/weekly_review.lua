@@ -10,46 +10,18 @@ table.insert(Config.spaces, {
 
 Config.funcs.weekly_review = {
   setup = function()
-    -- Open Obsidian workspace "weekly_review"
-    Obsidian.openWorkspace("weekly_review")
-    -- Move Obsidian to the left
-    local obsidian = hs.application.find("Obsidian")
-    obsidian:mainWindow():moveToUnit(hs.layout.left50)
-
     -- Open Todoist and move it to the right
+    hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application.find("com.todoist.mac.Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.right50)
+    Todoist.searchAndOpen('📥 Inbox')
 
-    -- Clean up ticked items
-    -- This runs a little script that unticks items in Obsidian:
-    -- perl -pi -e 's/\[x\]/[ ]/g' /path/to/file.md
-    hs.osascript.applescript(
-      [[
-        do shell script quoted form of "./Users/Joschua/Documents/Projects/Scripts/untick.sh"
-      ]]
-    )
+    -- Open Obsidian workspace, move to the left, untick elements
+    Obsidian.openWorkspace("weekly_review")
+    local obsidian = hs.application.find("Obsidian")
+    obsidian:mainWindow():moveToUnit(hs.layout.maximized)
+    Obsidian.untick('obsidian://advanced-uri?vault=Vault&filepath=Current%2520Weekly%2520Review.md&heading=Weekly%2520Review')
 
-    -- Add template to clipboard
-    return hs.osascript.applescript(
-      [[
-set weeknum to do shell script "date +%V"
-
-set the clipboard to "### Week " & weeknum & "
-**How did my goals go last week?**
-* 
-
-**Which *essential* things am I *under*-investing in?**
-* 
-*What is an appropriate time?*
-* 
-
-**Which *non-essential* thing am I *over*-investing in?**
-* 
-*What is an appropriate time?*"
-
-display notification "Weekly Reflection in clipboard." with title "Weekly Review"
-      ]]
-    )
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
