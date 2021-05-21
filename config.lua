@@ -59,7 +59,7 @@ return {
   ['com.fluidapp.FluidApp2.YS Todoist'] = {
     bundleID = 'com.fluidapp.FluidApp2.YS Todoist',
     hyper = 'y',
-    tags = {'work', 'work_tasks'},
+    whitelisted = true,
     layouts = {
       {nil, 1, hs.layout.maximized}
     }
