@@ -1,6 +1,6 @@
 table.insert(Config.spaces, {
   text = "Deep",
-  subText = "Work with focus.",
+  subText = "Focus deeply.",
   image = hs.image.imageFromAppBundle('com.todoist.mac.Todoist'),
   togglProj = Config.projects.deep,
   blacklist = {'distraction'},

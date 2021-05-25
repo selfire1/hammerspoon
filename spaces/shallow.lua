@@ -1,6 +1,6 @@
 table.insert(Config.spaces, {
   text = "Shallow",
-  subText = "Chip away on shallow work.",
+  subText = "Chip away on shallow tasks.",
   image = hs.image.imageFromAppBundle('com.apple.exposelauncher'),
   togglProj = Config.projects.shallow,
   blacklist = {'distraction', 'coding', 'work'},
