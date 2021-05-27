@@ -15,7 +15,7 @@ Config.funcs.deep = {
   end,
   teardown = function()
     -- Quit Todoist and ProtonMail
-    local toQuit = { 'com.todoist.mac.Todoist', 'org.epichrome.eng.ProtonMail' }
+    local toQuit = { 'org.epichrome.eng.ProtonMail' }
 
     for i = 1, #toQuit do
       if hs.application.find(toQuit[i]) ~= nil then
@@ -23,6 +23,7 @@ Config.funcs.deep = {
     end
     end
 
+    Todoist.searchAndOpen('Daily Focus')
     
   end
 }

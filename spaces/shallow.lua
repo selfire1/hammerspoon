@@ -15,8 +15,7 @@ Config.funcs.shallow = {
     end,
     teardown = function ()
         -- Quit Todoist and Brave
-        local toQuit = { 'com.todoist.mac.Todoist',
-        'com.brave.Browser' }
+        local toQuit = { 'com.brave.Browser' }
 
     for i = 1, #toQuit do
       if hs.application.find(toQuit[i]) ~= nil then
@@ -24,7 +23,7 @@ Config.funcs.shallow = {
     end
     end
 
-    
+    Todoist.searchAndOpen('Daily Focus')
 
     end
 }

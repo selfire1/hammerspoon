@@ -28,5 +28,7 @@ Config.funcs.code = {
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    Todoist.searchAndOpen('Daily Focus')
   end
 }

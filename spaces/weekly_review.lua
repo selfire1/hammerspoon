@@ -25,14 +25,15 @@ Config.funcs.weekly_review = {
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
-    local toQuit = { 'com.todoist.mac.Todoist',
-      'md.obsidian', 'com.staysorted.Sorted' }
+    local toQuit = { 'md.obsidian', 'com.staysorted.Sorted' }
 
     for i = 1, #toQuit do
       if hs.application.find(toQuit[i]) ~= nil then
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    Todoist.searchAndOpen('Daily Focus')
 
   end
   }
