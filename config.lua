@@ -7,7 +7,9 @@ return {
     layouts = {
       {nil, 2, hs.layout.maximized}
     },
-    whitelisted = true
+    whitelisted = true,
+    local_bindings = {'.', 'q'}
+
   },
   ['com.hnc.Discord'] = {
     bundleID = 'com.hnc.Discord',
@@ -113,8 +115,7 @@ return {
   },
   ['com.apple.Terminal'] = {
     bundleID = 'com.apple.Terminal',
-    hyperKey = 'i',
-    tags = {'coding', 'transfer'}
+    hyperKey = 'i'
   },
   ['com.microsoft.VSCode'] = {
     bundleID = 'com.microsoft.VSCode',
