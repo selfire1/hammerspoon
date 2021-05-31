@@ -12,11 +12,11 @@ table.insert(Config.spaces, {
 
 Config.funcs.code = {
   setup = function ()
-    -- Open VS Code
-    hs.application.open('com.microsoft.VSCode')
-
     -- Open code tag in Todoist
     Todoist.searchAndOpen('code')
+
+    -- Open VS Code
+    hs.application.open('com.microsoft.VSCode')
   end,
 
   teardown = function ()
