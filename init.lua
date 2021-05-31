@@ -87,7 +87,6 @@ Hyper:bind({}, 'k', nil, function()
     return hs.osascript.applescript(
       [[
       display notification with title "Copied from Obsidian"
-      set the clipboard to ("()[" & (the clipboard) & "]")
     ]]
   )
   else
