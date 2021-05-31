@@ -78,18 +78,31 @@ Hyper:bind({}, 'r', nil, function()
   hs.reload()
 end)
 
--- Copy markdown link and tab title from brave
+-- Link Wizard: Hyper + K gets me the link wherever
+
 Hyper:bind({}, 'k', nil, function()
-  return hs.osascript.applescript(
-  [[
-  tell application "Brave Browser" to set vTitle to (title of active tab of front window)
-tell application "Brave Browser" to set vURL to URL of active tab of front window
-
-display notification vURL with title "Copied from Brave" subtitle vTitle
-
-set the clipboard to "[" & vTitle & "](" & vURL & ")"
-  ]]
-)
+  -- If in Obsidian, copy link to note
+  if string.find(tostring(hs.window.frontmostWindow()), "Vault") then
+    hs.urlevent.openURL("obsidian://advanced-uri?vault=Vault&commandid=workspace%253Acopy-url")
+    return hs.osascript.applescript(
+      [[
+      display notification with title "Copied from Obsidian"
+      set the clipboard to ("()[" & (the clipboard) & "]")
+    ]]
+  )
+  else
+    -- Copy markdown link and tab title from brave
+    return hs.osascript.applescript(
+    [[
+    tell application "Brave Browser" to set vTitle to (title of active tab of front window)
+  tell application "Brave Browser" to set vURL to URL of active tab of front window
+  
+  display notification vURL with title "Copied from Brave" subtitle vTitle
+  
+  set the clipboard to "[" & vTitle & "](" & vURL & ")"
+    ]]
+  )
+  end
 end)
 
 -- Jump to google hangout or zoom
