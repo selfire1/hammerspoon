@@ -25,6 +25,6 @@ Config.funcs.browse = {
     end
     end
 
-    Todoist.searchAndOpen('Daily Focus')
+    
   end
 }

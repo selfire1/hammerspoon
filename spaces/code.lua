@@ -13,7 +13,7 @@ table.insert(Config.spaces, {
 Config.funcs.code = {
   setup = function ()
     -- Open code tag in Todoist
-    Todoist.searchAndOpen('code')
+    
 
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
@@ -29,6 +29,6 @@ Config.funcs.code = {
     end
     end
 
-    Todoist.searchAndOpen('Daily Focus')
+    
   end
 }

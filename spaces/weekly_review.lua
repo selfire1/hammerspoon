@@ -14,7 +14,7 @@ Config.funcs.weekly_review = {
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application.find("com.todoist.mac.Todoist")
     todoist:mainWindow():moveToUnit(hs.layout.right50)
-    Todoist.searchAndOpen('📥 Inbox')
+    
 
     -- Open Obsidian workspace, move to the left, untick elements
     Obsidian.openWorkspace("weekly_review")
@@ -33,7 +33,7 @@ Config.funcs.weekly_review = {
     end
     end
 
-    Todoist.searchAndOpen('Daily Focus')
+    
 
   end
   }

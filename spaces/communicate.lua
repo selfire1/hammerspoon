@@ -10,7 +10,7 @@ table.insert(Config.spaces, {
 Config.funcs.chat = {
 setup = function()
     -- Open communicate tag in Todoist
-    Todoist.searchAndOpen('communicate')
+    
 end,
 teardown = function()
   -- Quit a bunch of apps
@@ -30,6 +30,6 @@ teardown = function()
     -- Close tabs by domain
     Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
 
-    Todoist.searchAndOpen('Daily Focus')
+    
 end
 }

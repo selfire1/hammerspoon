@@ -19,7 +19,7 @@ Config.funcs.play = {
     end
     end
     
-    Todoist.searchAndOpen('Daily Focus')
+    
     
     end
 }
