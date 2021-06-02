@@ -1,7 +1,7 @@
 return {
   applications = {
-  ['com.todoist.mac.Todoist'] = {
-    bundleID = 'com.todoist.mac.Todoist',
+  ['com.amazingmarvin.marvindesktop'] = {
+    bundleID = 'com.amazingmarvin.marvindesktop',
     hyperKey = 't',
     tags = {'review', 'tasks'},
     layouts = {
