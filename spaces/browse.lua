@@ -10,12 +10,21 @@ table.insert(Config.spaces, {
 
 Config.funcs.browse = {
   setup = function()
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.browse .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+
     -- Open Brave
     hs.application.open('com.brave.Browser')
 
     
   end,
   teardown = function ()
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
     -- Quit Brave
     local toQuit = { 'com.brave.Browser' }
 

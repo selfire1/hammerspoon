@@ -10,6 +10,12 @@ table.insert(Config.spaces, {
 
 Config.funcs.weekly_review = {
   setup = function()
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.deep .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+          
     -- Open Todoist and move it to the right
     hs.application.open('com.todoist.mac.Todoist', 10, 10)
     local todoist = hs.application.find("com.todoist.mac.Todoist")
@@ -32,7 +38,10 @@ Config.funcs.weekly_review = {
       hs.application.find(toQuit[i]):kill()
     end
     end
-
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
     
 
   end

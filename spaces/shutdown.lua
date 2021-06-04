@@ -13,6 +13,10 @@ Config.funcs.shutdown = {
     hs.fnutils.map(Config.applications, function(app)
       hs.fnutils.map(hs.application.applicationsForBundleID(app.bundleID), function(a) a:kill() end)
     end)
+
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
     
     hs.caffeinate.systemSleep()
   end,

@@ -14,7 +14,7 @@ Config.funcs.code = {
     -- Write current headspace in textfile
     hs.osascript.applescript([[
       do shell script "echo '
-        ]] .. hs.settings.get("secrets").toggl.projects.shallow .. [[
+        ]] .. hs.settings.get("secrets").toggl.projects.code .. [[
           ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
 
     -- Open VS Code
@@ -22,7 +22,11 @@ Config.funcs.code = {
   end,
 
   teardown = function ()
-        -- Quit VS Code
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
+    -- Quit VS Code
     local toQuit = { 'com.microsoft.VSCode' }
 
     for i = 1, #toQuit do

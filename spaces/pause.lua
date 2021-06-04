@@ -5,15 +5,11 @@ table.insert(Config.spaces, {
 })
 
 Config.funcs.pause = {
-  setup = function()
-    spoon.Headspace.stopToggl()
-    hs.settings.clear("headspace")
-end
-}
-
-
-Config.funcs.pause = {
     setup = function()
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
         spoon.Headspace.stopToggl()
         hs.settings.clear("headspace")
         

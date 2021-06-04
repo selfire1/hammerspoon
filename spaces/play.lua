@@ -9,7 +9,18 @@ table.insert(Config.spaces, {
 })
 
 Config.funcs.play = {
+  setup = function ()
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.play .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+  end,
     teardown = function ()
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
       -- Quit GeForceNOW
     local toQuit = { 'GeForceNOW' }
 

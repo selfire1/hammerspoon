@@ -3,13 +3,19 @@ table.insert(Config.spaces, {
   subText = "Write about the day.",
   image = hs.image.imageFromAppBundle('md.obsidian'),
   funcs = 'journal',
-  togglProj = Config.projects.writing,
+  togglProj = Config.projects.write,
   togglDescr = "Journaling",
   whitelist = {'writing'}
 })
 
 Config.funcs.journal = {
     setup = function ()
+        -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.code .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+
         -- Open Obsidian in workspace "blank"
         Obsidian.blank()
 
@@ -22,6 +28,10 @@ Config.funcs.journal = {
         Obsidian.today()
     end,
     teardown = function ()
+        -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
         -- Quit Obsidian
         local toQuit = { 'md.obsidian' }
 

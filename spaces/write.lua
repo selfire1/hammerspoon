@@ -9,11 +9,17 @@ table.insert(Config.spaces, {
 
 Config.funcs.write = {
   setup = function()
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.write .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+          
     -- Open Obsidian workspace "weekly_review"
     Obsidian.openWorkspace("blank")
 
     -- Open write tag in Todoist
-    
+
   end,
   teardown = function()
     -- Quit Todoist and Obsidian
@@ -25,7 +31,11 @@ Config.funcs.write = {
     end
     end
 
-    
-    
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+
+
+
   end
   }

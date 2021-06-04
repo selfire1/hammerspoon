@@ -11,6 +11,12 @@ table.insert(Config.spaces, {
 
 Config.funcs.transfer = {
   setup = function()
+      -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.write .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+          
     -- Open Kindle app hidden
     hs.application.open('com.amazon.Kindle', 20, 20)
     hs.application.find('com.amazon.Kindle'):hide()
@@ -43,7 +49,10 @@ Config.funcs.transfer = {
     -- Close Brave tab
     Brave.killTabsByDomain("read.amazon.com")
 
-    
+          -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
+        
 
   end
   }
