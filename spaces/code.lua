@@ -9,11 +9,13 @@ table.insert(Config.spaces, {
   funcs = 'code'
 })
 
-
 Config.funcs.code = {
   setup = function ()
-    -- Open code tag in Todoist
-    
+    -- Write current headspace in textfile
+    hs.osascript.applescript([[
+      do shell script "echo '
+        ]] .. hs.settings.get("secrets").toggl.projects.shallow .. [[
+          ' > '/Users/Joschua/Documents/Projects/Scripts/marvin-toggl-config/current-headspace.txt'" ]])
 
     -- Open VS Code
     hs.application.open('com.microsoft.VSCode')
