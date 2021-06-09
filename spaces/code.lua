@@ -35,6 +35,8 @@ Config.funcs.code = {
     end
     end
 
+    Brave.killTabsByDomain('github.com|stackoverflow.com')
+
     
   end
 }
