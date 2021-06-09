@@ -5,7 +5,7 @@ return {
     hyperKey = 't',
     tags = {'review', 'tasks'},
     layouts = {
-      {nil, 2, hs.layout.maximized}
+      {nil, 1, hs.layout.maximized}
     },
     whitelisted = true,
     local_bindings = {'.', 'q'}
@@ -22,7 +22,10 @@ return {
   ['com.brave.Browser'] = {
     bundleID = 'com.brave.Browser',
     hyperKey = 'b',
-    tags = {'browser', 'research', 'transfer'}
+    tags = {'browser', 'research', 'transfer'},
+    layouts = {
+      {nil, 2, hs.layout.maximized}
+    }
   },
   ['desktop.WhatsApp'] = {
     bundleID = 'desktop.WhatsApp',
@@ -111,7 +114,7 @@ return {
   ['org.whispersystems.signal-desktop'] = {
     bundleID = 'org.whispersystems.signal-desktop',
     hyperKey = 'e',
-    tags = {'distraction', 'communication'}
+    tags = {'distraction', 'communication', 'coding'}
   },
   ['com.apple.Terminal'] = {
     bundleID = 'com.apple.Terminal',
