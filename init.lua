@@ -83,7 +83,7 @@ end)
 Hyper:bind({}, 'k', nil, function()
   -- If in Obsidian, copy link to note
   if string.find(tostring(hs.window.frontmostWindow()), "Vault") then
-    hs.urlevent.openURL("obsidian://advanced-uri?vault=Vault&commandid=workspace%253Acopy-url")
+    hs.eventtap.keyStroke("cmd", 'k')
     return hs.osascript.applescript(
       [[
       display notification with title "Copied from Obsidian"
