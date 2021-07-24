@@ -43,7 +43,7 @@ Config.funcs.transfer = {
     -- Close Brave tab
     Brave.killTabsByDomain("read.amazon.com")
 
-    Todoist.searchAndOpen('Daily Focus')
+    Todoist.openHomeview()
 
   end
   }

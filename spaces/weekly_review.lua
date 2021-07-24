@@ -33,7 +33,7 @@ Config.funcs.weekly_review = {
     end
     end
 
-    Todoist.searchAndOpen('Daily Focus')
+    Todoist.openHomeview()
 
   end
   }

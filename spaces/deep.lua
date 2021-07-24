@@ -23,7 +23,7 @@ Config.funcs.deep = {
     end
     end
 
-    Todoist.searchAndOpen('Daily Focus')
+    Todoist.openHomeview()
     
   end
 }
