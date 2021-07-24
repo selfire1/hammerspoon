@@ -20,7 +20,7 @@ Config.funcs.code = {
   end,
 
   teardown = function ()
-        -- Quit VS Code
+    -- Quit VS Code
     local toQuit = { 'com.microsoft.VSCode' }
 
     for i = 1, #toQuit do
