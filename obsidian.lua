@@ -42,4 +42,11 @@ module.untick = function(url)
 end
 
 
+module.openObsUri = function(uri)
+    -- Open Obsidian in blank
+    module.blank()
+    -- Open note
+    hs.urlevent.openURLWithBundle(uri, 'md.obsidian')
+end
+
 return module
