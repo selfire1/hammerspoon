@@ -29,4 +29,9 @@ end tell
     ]])
 end
 
+module.openHomeview = function ()
+	hs.application.open('com.todoist.mac.Todoist', 10, 10)
+	hs.eventtap.keyStroke('h')
+end
+
 return module
