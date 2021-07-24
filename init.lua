@@ -27,6 +27,7 @@ require('spaces/binge')
 require('spaces/play')
 
 -- Events
+require('spaces/dnd')
 require('spaces/journal')
 require('spaces/pause')
 require('spaces/weekly_review')
@@ -79,7 +80,6 @@ Hyper:bind({}, 'r', nil, function()
 end)
 
 -- Link Wizard: Hyper + K gets me the link wherever
-
 Hyper:bind({}, 'k', nil, function()
   -- If in Obsidian, copy link to note
   if string.find(tostring(hs.window.frontmostWindow()), "Vault") then
