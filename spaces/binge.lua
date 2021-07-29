@@ -3,7 +3,7 @@ table.insert(Config.spaces, {
   subText = "Grab some popcorn and enjoy watching videos.",
   image = hs.image.imageFromAppBundle('org.epichrome.eng.YouTube'),
   togglProj = Config.projects.binge,
-  togglDescr = "Binge",
+  togglDesc = "Binge",
   whitelist = {'video', 'browser'},
   funcs = 'binge',
   intentRequired = true,

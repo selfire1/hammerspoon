@@ -3,7 +3,7 @@ table.insert(Config.spaces, {
   subText = "Outline, transfer and discover new and old ideas.",
   image = hs.image.imageFromAppBundle('com.amazon.Kindle'),
   togglProj = Config.projects.write,
-  togglDescr = "Transferring Notes from Kindle or Evernote",
+  togglDesc = "Transferring Notes from Kindle or Evernote",
   whitelist = {'writing', 'transfer'},
   funcs = "transfer",
   intentRequired = true

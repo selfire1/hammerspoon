@@ -3,7 +3,7 @@ table.insert(Config.spaces, {
   subText = "Plan the week.",
   image = hs.image.imageFromAppBundle('com.apple.iCal'),
   togglProj = Config.projects.deep,
-  togglDescr = "Weekly Review",
+  togglDesc = "Weekly Review",
   whitelist = {'writing', 'transfer'},
   funcs = "weekly_review"
 })

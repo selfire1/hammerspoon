@@ -4,7 +4,7 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('com.apple.Chess'),
   whitelist = {'browser', 'notes', 'communication', 'coding'},
   togglProj = Config.projects.communicate,
-  togglDescr = "D&D",
+  togglDesc = "D&D",
   funcs = 'dnd'
 })
 
@@ -41,6 +41,8 @@ teardown = function ()
       hs.application.find(toQuit[i]):kill()
     end
     end
+
+    Obsidian.blank()
     
   end
 }

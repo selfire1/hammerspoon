@@ -4,7 +4,7 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('md.obsidian'),
   funcs = 'journal',
   togglProj = Config.projects.writing,
-  togglDescr = "Journaling",
+  togglDesc = "Journaling",
   whitelist = {'writing'}
 })
 
