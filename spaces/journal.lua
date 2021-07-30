@@ -3,7 +3,7 @@ table.insert(Config.spaces, {
   subText = "Write about the day.",
   image = hs.image.imageFromAppBundle('md.obsidian'),
   funcs = 'journal',
-  togglProj = Config.projects.writing,
+  togglProj = Config.projects.write,
   togglDesc = "Journaling",
   whitelist = {'writing'}
 })
