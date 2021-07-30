@@ -31,6 +31,6 @@ Config.funcs.journal = {
         end
         end
 
-        Todoist.openHomeview()
+        Todoist.home()
     end
 }

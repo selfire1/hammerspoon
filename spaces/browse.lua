@@ -24,6 +24,6 @@ Config.funcs.browse = {
     end
     end
 
-    Todoist.openHomeview()
+    Todoist.home()
   end
 }

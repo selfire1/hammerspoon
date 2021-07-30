@@ -29,7 +29,7 @@ Config.funcs.code = {
     end
     end
 
-    Todoist.openHomeview()
+    Todoist.home()
     Brave.killTabsByDomain("github.com")
   end
 }

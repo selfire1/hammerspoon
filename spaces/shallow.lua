@@ -23,7 +23,7 @@ Config.funcs.shallow = {
     end
     end
 
-    Todoist.openHomeview()
+    Todoist.home()
 
     end
 }

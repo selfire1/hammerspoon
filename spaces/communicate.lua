@@ -30,6 +30,6 @@ teardown = function()
     -- Close tabs by domain
     Brave.killTabsByDomain("protonmail.com|facebook.com|gmail.com")
 
-    Todoist.openHomeview()
+    Todoist.home()
 end
 }

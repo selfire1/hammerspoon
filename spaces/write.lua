@@ -25,7 +25,7 @@ Config.funcs.write = {
     end
     end
 
-    Todoist.openHomeview()
+    Todoist.home()
     
   end
   }

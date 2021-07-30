@@ -29,7 +29,7 @@ end tell
     ]])
 end
 
-module.openHomeview = function ()
+module.home = function ()
 	hs.application.open('com.todoist.mac.Todoist', 10, 10)
 	hs.eventtap.keyStroke(nil, "h")
 end

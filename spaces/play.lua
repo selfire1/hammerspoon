@@ -19,7 +19,7 @@ Config.funcs.play = {
     end
     end
     
-    Todoist.openHomeview()
+    Todoist.home()
     
     end
 }

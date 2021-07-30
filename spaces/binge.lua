@@ -21,7 +21,7 @@ Config.funcs.binge = {
     -- Close YouTube und Netflix tabs
     Brave.killTabsByDomain("youtube.com|netflix.com|disneyplus.com")
     
-    Todoist.openHomeview()
+    Todoist.home()
 
   end
 }

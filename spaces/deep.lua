@@ -23,7 +23,7 @@ Config.funcs.deep = {
     end
     end
 
-    Todoist.openHomeview()
+    Todoist.home()
     
   end
 }
