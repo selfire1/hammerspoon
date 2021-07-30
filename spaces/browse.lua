@@ -4,8 +4,7 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('com.brave.Browser'),
   togglProj = Config.projects.browse,
   funcs = 'browse',
-  whitelist = {'browser'},
-  intentRequired = true
+  whitelist = {'browser', 'notes'}
 })
 
 Config.funcs.browse = {
