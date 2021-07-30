@@ -127,8 +127,8 @@ return {
     hyperKey = 'd',
     whitelisted = true
   },
-  ['com.google.Chrome.app.chfbpgnooceecdoohagngmjnndbbaeip'] = {
-    bundleID = 'com.google.Chrome.app.chfbpgnooceecdoohagngmjnndbbaeip',
+  ['com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi'] = {
+    bundleID = 'com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi',
     hyperKey = 'x',
     tags = {'work'}
   },
