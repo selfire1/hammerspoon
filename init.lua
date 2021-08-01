@@ -112,3 +112,8 @@ Hyper:bind({}, 'z', nil, function()
     brave.jump("meet.google.com|hangouts.google.com.call")
   end
 end)
+
+-- Todoist global quick add
+Hyper:bind({}, 'q', nil, function()
+  hs.eventtap.keyStroke({"cmd", "alt"}, "q")
+end)
