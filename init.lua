@@ -114,6 +114,6 @@ Hyper:bind({}, 'z', nil, function()
 end)
 
 -- Todoist global quick add
-Hyper:bind({}, 'q', nil, function()
-  hs.eventtap.keyStroke({"cmd", "alt"}, "q")
+Hyper:bind({}, 'u', nil, function()
+  hs.eventtap.keyStroke({"cmd", "ctrl"}, "t")
 end)
