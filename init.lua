@@ -15,6 +15,7 @@ Config.projects = hs.settings.get("secrets").toggl.projects
 -- Deep
 require('spaces/deep')
 require('spaces/code')
+require('spaces/note-taking')
 require('spaces/write')
 require('spaces/transfer')
 -- Shallow
@@ -117,3 +118,8 @@ end)
 Hyper:bind({}, 'u', nil, function()
   hs.eventtap.keyStroke({"cmd", "ctrl"}, "t")
 end)
+
+-- URL binding
+-- hs.urlevent.bind("weeklyreview", function()
+--   spoon.Headspace.switch('note-taking')
+-- end)
