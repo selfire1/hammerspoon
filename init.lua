@@ -119,6 +119,14 @@ Hyper:bind({}, 'u', nil, function()
   hs.eventtap.keyStroke({"cmd", "ctrl"}, "t")
 end)
 
+Hyper:bind({}, 'f', nil, function()
+  Obsidian.float()
+end)
+
+Hyper:bind({}, 'g', nil, function()
+  Obsidian.defloat()
+end)
+
 -- URL binding
 -- hs.urlevent.bind("weeklyreview", function()
 --   spoon.Headspace.switch('note-taking')

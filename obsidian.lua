@@ -41,12 +41,25 @@ module.untick = function(url)
 
 end
 
-
 module.openObsUri = function(uri)
     -- Open Obsidian in blank
     module.blank()
     -- Open note
     hs.urlevent.openURLWithBundle(uri, 'md.obsidian')
+end
+
+module.float = function()
+
+    if hs.application.find('md.obsidian') == nil then
+        hs.application.open('md.obsidian', 10, 10)
+    end
+
+    hs.urlevent.openURL('obsidian://advanced-uri?vault=Vault&commandid=quickadd%253Achoice%253Ac9ac21ce-d33a-40e8-9887-c061c51c9277')
+end
+
+module.defloat = function()
+    hs.urlevent.openURL('obsidian://advanced-uri?vault=Vault&commandid=quickadd%253Achoice%253A083294da-5cd3-4aa3-8318-633b8e37af29')
+    hs.application.find('md.obsidian'):hide()
 end
 
 return module

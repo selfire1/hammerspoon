@@ -4,7 +4,7 @@ table.insert(Config.spaces, {
   image = hs.image.imageFromAppBundle('org.epichrome.eng.YouTube'),
   togglProj = Config.projects.binge,
   togglDesc = "Binge",
-  whitelist = {'video', 'browser'},
+  whitelist = {'video', 'browser', 'notes'},
   funcs = 'binge',
   intentRequired = true,
   intentSuggestions = hs.settings.get("secrets").intentBinge

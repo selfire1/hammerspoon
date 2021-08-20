@@ -11,7 +11,8 @@ Config.funcs.notetaking = {
     setup = function ()
     -- Open Obsidian
     hs.application.open('md.obsidian', 10, 10)
-
+    -- Activate Obsidian's 'floating' mode
+    hs.urlevent.openURL('obsidian://advanced-uri?vault=Vault&commandid=quickadd%253Achoice%253Ac9ac21ce-d33a-40e8-9887-c061c51c9277')
     -- Hide Todoist
     local toHide = {'com.todoist.mac.Todoist'}
 
@@ -23,8 +24,10 @@ Config.funcs.notetaking = {
 
     end,
     teardown = function ()
+      -- Open Obsidian in normal mode
+      hs.urlevent.openURL('obsidian://advanced-uri?vault=Vault&commandid=quickadd%253Achoice%253A083294da-5cd3-4aa3-8318-633b8e37af29')
+    
     -- Open todoist homescreen
     Todoist.home()
-
     end
 }
