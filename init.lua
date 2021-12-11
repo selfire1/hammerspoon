@@ -72,7 +72,9 @@ spoon.Headspace:start()
                :loadConfig(Config)
                :setTogglKey(hs.settings.get('secrets').toggl.key)
 
--- Hyper:bind({}, 'space', nil, spoon.Headspace.choose)
+Hyper:bind({}, 'space', nil, function ()
+  hs.eventtap.keyStroke("ctrl", "b")
+end)
 
 -- Hammerspoon bindings
 Hyper:bind({}, 'h', nil, function()
