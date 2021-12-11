@@ -115,7 +115,7 @@ Hyper:bind({}, 'z', nil, function()
   else if hs.application.find('com.hnc.Discord') then
     hs.application.launchOrFocusByBundleID('com.hnc.Discord')
   else
-    brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
+    Brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
   end
 end
 end)
