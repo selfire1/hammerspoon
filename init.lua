@@ -61,6 +61,9 @@ Brave.start(Config)
 Obsidian = require('obsidian')
 Obsidian.start(Config)
 
+Url = require('urlscheme')
+Url.start(Config)
+
 Todoist = require('todoist')
 Todoist.start(Config)
 
@@ -69,7 +72,7 @@ spoon.Headspace:start()
                :loadConfig(Config)
                :setTogglKey(hs.settings.get('secrets').toggl.key)
 
-Hyper:bind({}, 'space', nil, spoon.Headspace.choose)
+-- Hyper:bind({}, 'space', nil, spoon.Headspace.choose)
 
 -- Hammerspoon bindings
 Hyper:bind({}, 'h', nil, function()
@@ -128,6 +131,12 @@ Hyper:bind({}, 'g', nil, function()
 end)
 
 -- URL binding
--- hs.urlevent.bind("weeklyreview", function()
---   spoon.Headspace.switch('note-taking')
--- end)
+hs.urlevent.bind("move", function(eventName, params)
+  Url.move(eventName, params)
+end)
+
+Hyper:bind({}, 'w', nil, function()
+  local window = hs.window.frontmostWindow()
+  hs.alert.show(window)
+  window:moveToUnit(hs.layout.left50)
+end)
