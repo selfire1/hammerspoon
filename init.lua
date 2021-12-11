@@ -112,9 +112,12 @@ end)
 Hyper:bind({}, 'z', nil, function()
   if hs.application.find('us.zoom.xos') then
     hs.application.launchOrFocusByBundleID('us.zoom.xos')
+  else if hs.application.find('com.hnc.Discord') then
+    hs.application.launchOrFocusByBundleID('com.hnc.Discord')
   else
-    brave.jump("meet.google.com|hangouts.google.com.call")
+    brave.jump("meet.google.com|hangouts.google.com.call|discord.com/")
   end
+end
 end)
 
 -- Todoist global quick add
