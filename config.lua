@@ -113,8 +113,8 @@ return {
     hyperKey = 'e',
     tags = {'distraction', 'communication'}
   },
-  ['com.apple.Terminal'] = {
-    bundleID = 'com.apple.Terminal',
+  ['com.googlecode.iterm2'] = {
+    bundleID = 'com.googlecode.iterm2',
     hyperKey = 'i'
   },
   ['com.microsoft.VSCode'] = {
