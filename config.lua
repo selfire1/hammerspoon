@@ -113,8 +113,8 @@ return {
     hyperKey = 'e',
     tags = {'distraction', 'communication'}
   },
-  ['com.googlecode.iterm2'] = {
-    bundleID = 'com.googlecode.iterm2',
+  ['net.kovidgoyal.kitty'] = {
+    bundleID = 'net.kovidgoyal.kitty',
     hyperKey = 'i'
   },
   ['com.microsoft.VSCode'] = {
