@@ -112,7 +112,6 @@ return {
     bundleID = 'org.whispersystems.signal-desktop',
     tags = {'distraction', 'communication'}
   },
-  },
   ['maccatalyst.com.endel.endel'] = {
     bundleID = 'maccatalyst.com.endel.endel',
     hyperKey = 'e'
