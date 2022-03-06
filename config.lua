@@ -110,8 +110,12 @@ return {
   },
   ['org.whispersystems.signal-desktop'] = {
     bundleID = 'org.whispersystems.signal-desktop',
-    hyperKey = 'e',
     tags = {'distraction', 'communication'}
+  },
+  },
+  ['maccatalyst.com.endel.endel'] = {
+    bundleID = 'maccatalyst.com.endel.endel',
+    hyperKey = 'e'
   },
   ['net.kovidgoyal.kitty'] = {
     bundleID = 'net.kovidgoyal.kitty',
