@@ -2,7 +2,6 @@ return {
   applications = {
   ['com.todoist.mac.Todoist'] = {
     bundleID = 'com.todoist.mac.Todoist',
-    hyperKey = 't',
     tags = {'review', 'tasks'},
     layouts = {
       {nil, 2, hs.layout.maximized}
@@ -110,11 +109,11 @@ return {
   },
   ['org.whispersystems.signal-desktop'] = {
     bundleID = 'org.whispersystems.signal-desktop',
-    tags = {'distraction', 'communication'}
+    tags = {'distraction', 'communication'},
+    hyperKey = 'e'
   },
   ['maccatalyst.com.endel.endel'] = {
-    bundleID = 'maccatalyst.com.endel.endel',
-    hyperKey = 'e'
+    bundleID = 'maccatalyst.com.endel.endel'
   },
   ['net.kovidgoyal.kitty'] = {
     bundleID = 'net.kovidgoyal.kitty',
@@ -136,7 +135,8 @@ return {
     tags = {'work'}
   },
   ['com.staysorted.Sorted'] = {
-    bundleID = 'com.staysorted.Sorted'
+    bundleID = 'com.staysorted.Sorted',
+    hyperKey = 't'
   }
 
 }
