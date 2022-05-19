@@ -124,7 +124,11 @@ end)
 
 -- Todoist global quick add
 Hyper:bind({}, 'u', nil, function()
-  hs.eventtap.keyStroke({"cmd", "ctrl"}, "t")
+  hs.application.launchOrFocusByBundleID('com.microsoft.VSCode')
+  hs.eventtap.keyStroke({"cmd"}, "s")
+  hs.application.launchOrFocusByBundleID('com.brave.Browser')
+  hs.eventtap.keyStroke({"cmd"}, "r")
+  hs.application.launchOrFocusByBundleID('com.microsoft.VSCode')
 end)
 
 Hyper:bind({}, 'f', nil, function()
