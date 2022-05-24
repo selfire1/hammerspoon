@@ -1,59 +1,23 @@
-local secrets = require('secrets')
-      secrets.start('.secrets.json')
-
 hs.loadSpoon('Hyper')
-hs.loadSpoon('Headspace')
-
-Config = require('config')
-
--- configure spaces for headspace
-Config.spaces = {}
-Config.funcs = {}
-Config.projects = hs.settings.get("secrets").toggl.projects
-
--- SPACES
--- Deep
-require('spaces/deep')
-require('spaces/code')
-require('spaces/note-taking')
-require('spaces/write')
-require('spaces/transfer')
--- Shallow
-require('spaces/shallow')
-require('spaces/browse')
-require('spaces/communicate')
-require('spaces/social_play')
--- Relax
-require('spaces/binge')
-require('spaces/play')
-
--- Events
-require('spaces/dnd')
-require('spaces/journal')
-require('spaces/pause')
-require('spaces/weekly_review')
-require('spaces/shutdown')
-
--- Outside
-require('spaces/ys_work')
-
 Hyper = spoon.Hyper
+Hyper:bindHotKeys({hyperKey = {{},'F19'}})
 
--- provide the ability to override config per computer
-if (hs.fs.displayName('./local_config.lua')) then
-  require('local_config')
-end
+Config = {}
+Config.applications = require('configApplications')
 
-Hyper
-:start(Config)
-:setHyperKey('F19')
+hs.fnutils.each(Config.applications, function(appConfig)
+  if appConfig.hyperKey then
+    Hyper:bind({}, appConfig.hyperKey, function() hs.application.launchOrFocusByBundleID(appConfig.bundleID) end)
+  end
+  if appConfig.localBindings then
+    hs.fnutils.each(appConfig.localBindings, function(key)
+      Hyper:bindPassThrough(key, appConfig.bundleID)
+    end)
+  end
+end)
 
 Movewindows = require('movewindows')
 Movewindows.start()
-
-local autolayout = require('autolayout')
-      autolayout.start(Config)
-      Hyper:bind({}, 'return', nil, autolayout.autoLayout)
 
 Brave = require('brave')
 Brave.start(Config)
@@ -66,11 +30,6 @@ Url.start(Config)
 
 Todoist = require('todoist')
 Todoist.start(Config)
-
-
-spoon.Headspace:start()
-               :loadConfig(Config)
-               :setTogglKey(hs.settings.get('secrets').toggl.key)
 
 Hyper:bind({}, 'space', nil, function ()
   hs.eventtap.keyStroke("ctrl", "b")
