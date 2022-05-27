@@ -6,6 +6,7 @@ return {
       {nil, 2, hs.layout.maximized}
     },
     whitelisted = true,
+    hyperKey = 't',
     local_bindings = {'.', 'q'}
 
   },
@@ -135,7 +136,6 @@ return {
   },
   ['com.staysorted.Sorted'] = {
     bundleID = 'com.staysorted.Sorted',
-    hyperKey = 't'
   }
 
 }
