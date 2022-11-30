@@ -90,14 +90,6 @@ Hyper:bind({}, 'u', nil, function()
   hs.application.launchOrFocusByBundleID('com.microsoft.VSCode')
 end)
 
-Hyper:bind({}, 'f', nil, function()
-  Obsidian.float()
-end)
-
-Hyper:bind({}, 'g', nil, function()
-  Obsidian.defloat()
-end)
-
 -- URL binding
 hs.urlevent.bind("move", function(eventName, params)
   Url.move(eventName, params)

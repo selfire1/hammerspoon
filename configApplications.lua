@@ -118,9 +118,8 @@ return {
 	["maccatalyst.com.endel.endel"] = {
 		bundleID = "maccatalyst.com.endel.endel",
 	},
-	["net.kovidgoyal.kitty"] = {
-		bundleID = "net.kovidgoyal.kitty",
-		local_bindings = { "x" },
+	["com.googlecode.iterm2 "] = {
+		bundleID = "com.googlecode.iterm2",
 		hyperKey = "i",
 	},
 	["com.microsoft.VSCode"] = {
@@ -135,7 +134,7 @@ return {
 	},
 	["com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi"] = {
 		bundleID = "com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi",
-		hyperKey = "x",
+		-- hyperKey = "x",
 		tags = { "work" },
 	},
 	["com.staysorted.Sorted"] = {
