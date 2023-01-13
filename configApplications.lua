@@ -21,6 +21,10 @@ return {
 		bundleID = "org.mozilla.firefox",
 		tags = { "browser" },
 	},
+	["company.thebrowser.Browser"] = {
+		bundleID = "company.thebrowser.Browser",
+		hyperKey = "a",
+	},
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
 		hyperKey = "b",
@@ -124,7 +128,6 @@ return {
 	},
 	["com.microsoft.VSCode"] = {
 		bundleID = "com.microsoft.VSCode",
-		hyperKey = "a",
 		tags = { "coding" },
 	},
 	["com.toggl.toggldesktop.TogglDesktop"] = {
