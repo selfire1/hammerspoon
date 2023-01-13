@@ -23,54 +23,22 @@ return {
 	},
 	["company.thebrowser.Browser"] = {
 		bundleID = "company.thebrowser.Browser",
-		hyperKey = "a",
+		hyperKey = "b",
 	},
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
-		hyperKey = "b",
+		hyperKey = "l",
 		tags = { "browser", "research", "transfer" },
 	},
 	["desktop.WhatsApp"] = {
 		bundleID = "desktop.WhatsApp",
-		hyperKey = "n",
+		-- hyperKey = "n",
 		tags = { "communication", "messenger" },
 	},
 	["com.facebook.archon"] = {
 		bundleID = "com.facebook.archon",
-		hyperKey = "m",
+		-- hyperKey = "m",
 		tags = { "communication", "messenger" },
-	},
-	["org.epichrome.eng.YouTube"] = {
-		bundleID = "org.epichrome.eng.YouTube",
-		tags = { "video", "distraction" },
-	},
-	["org.epichrome.eng.Standard Gmail"] = {
-		bundleID = "org.epichrome.eng.Standard Gmail",
-		tags = { "communication", "email" },
-	},
-	["com.fluidapp.FluidApp2.try2 Gmail"] = {
-		bundleID = "com.fluidapp.FluidApp2.try2 Gmail",
-		tags = { "communication", "email" },
-	},
-	["com.fluidapp.FluidApp2.YWAM Gmail"] = {
-		bundleID = "com.fluidapp.FluidApp2.YWAM Gmail",
-		tags = { "work" },
-		hyperKey = "y",
-		rules = {
-			{ nil, 2, hs.layout.right50 },
-		},
-	},
-	["org.epichrome.eng.ProtonMail"] = {
-		bundleID = "org.epichrome.eng.ProtonMail",
-		tags = { "communication", "email" },
-	},
-	["com.fluidapp.FluidApp2.YS Todoist"] = {
-		bundleID = "com.fluidapp.FluidApp2.YS Todoist",
-		hyper = "y",
-		whitelisted = true,
-		layouts = {
-			{ nil, 1, hs.layout.maximized },
-		},
 	},
 	["com.apple.iCal"] = {
 		bundleID = "com.apple.iCal",
@@ -117,7 +85,7 @@ return {
 	["org.whispersystems.signal-desktop"] = {
 		bundleID = "org.whispersystems.signal-desktop",
 		tags = { "distraction", "communication" },
-		hyperKey = "e",
+		-- hyperKey = "e",
 	},
 	["maccatalyst.com.endel.endel"] = {
 		bundleID = "maccatalyst.com.endel.endel",
