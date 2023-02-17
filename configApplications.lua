@@ -15,6 +15,7 @@ return {
 	},
 	["com.hnc.Discord"] = {
 		bundleID = "com.hnc.Discord",
+		hyperKey = "d",
 		tags = { "communication", "voicechat", "distraction" },
 	},
 	["org.mozilla.firefox"] = {
@@ -100,7 +101,6 @@ return {
 	},
 	["com.toggl.toggldesktop.TogglDesktop"] = {
 		bundleID = "com.toggl.toggldesktop.TogglDesktop",
-		hyperKey = "d",
 		whitelisted = true,
 	},
 	["com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi"] = {
