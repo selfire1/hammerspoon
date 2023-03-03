@@ -9,6 +9,11 @@ return {
 		hyperKey = "t",
 		local_bindings = { ".", "q" },
 	},
+	["com.tinyspeck.slackmacgap"] = {
+		bundleID = "com.tinyspeck.slackmacgap",
+		hyperKey = "g",
+	},
+
 	["com.figma.Desktop"] = {
 		bundleID = "com.figma.Desktop",
 		hyperKey = "f",
@@ -24,7 +29,7 @@ return {
 	},
 	["company.thebrowser.Browser"] = {
 		bundleID = "company.thebrowser.Browser",
-		hyperKey = "b",
+		-- hyperKey = "b",
 	},
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
@@ -37,7 +42,7 @@ return {
 		tags = { "communication", "messenger" },
 	},
 	["com.facebook.archon"] = {
-		bundleID = "com.facebook.archon",
+		bundleID = "com.cacebook.archon",
 		-- hyperKey = "m",
 		tags = { "communication", "messenger" },
 	},
