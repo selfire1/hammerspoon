@@ -13,6 +13,10 @@ return {
 		bundleID = "com.tinyspeck.slackmacgap",
 		hyperKey = "g",
 	},
+	["com.clickup.desktop-app"] = {
+		bundleID = "com.clickup.desktop-app",
+		hyperKey = "p",
+	},
 
 	["com.figma.Desktop"] = {
 		bundleID = "com.figma.Desktop",
