@@ -50,8 +50,8 @@ return {
 		-- hyperKey = "m",
 		tags = { "communication", "messenger" },
 	},
-	["com.apple.iCal"] = {
-		bundleID = "com.apple.iCal",
+	["com.flexibits.fantastical2.mac"] = {
+		bundleID = "com.flexibits.fantastical2.mac",
 		hyperKey = "c",
 		tags = { "planning", "review", "calendar" },
 		whitelisted = true,
@@ -103,6 +103,10 @@ return {
 	["com.googlecode.iterm2 "] = {
 		bundleID = "com.googlecode.iterm2",
 		hyperKey = "i",
+	},
+	["net.kovidgoyal.kitty"] = {
+		bundleID = "net.kovidgoyal.kitty",
+		hyperKey = "y",
 	},
 	["com.microsoft.VSCode"] = {
 		bundleID = "com.microsoft.VSCode",
