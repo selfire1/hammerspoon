@@ -102,11 +102,11 @@ return {
 	},
 	["com.googlecode.iterm2 "] = {
 		bundleID = "com.googlecode.iterm2",
-		hyperKey = "i",
+		hyperKey = "y",
 	},
 	["net.kovidgoyal.kitty"] = {
 		bundleID = "net.kovidgoyal.kitty",
-		hyperKey = "y",
+		hyperKey = "i",
 	},
 	["com.microsoft.VSCode"] = {
 		bundleID = "com.microsoft.VSCode",
