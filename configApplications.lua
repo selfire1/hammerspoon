@@ -33,11 +33,11 @@ return {
 	},
 	["company.thebrowser.Browser"] = {
 		bundleID = "company.thebrowser.Browser",
-		-- hyperKey = "b",
+		hyperKey = "l",
 	},
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
-		hyperKey = "l",
+		-- hyperKey = "l",
 		tags = { "browser", "research", "transfer" },
 	},
 	["desktop.WhatsApp"] = {
