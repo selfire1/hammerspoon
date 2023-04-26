@@ -108,10 +108,10 @@ return {
 		bundleID = "net.kovidgoyal.kitty",
 		hyperKey = "i",
 	},
-	["com.microsoft.VSCode"] = {
-		bundleID = "com.microsoft.VSCode",
-		tags = { "coding" },
-	},
+	-- ["com.microsoft.VSCode"] = {
+	-- 	bundleID = "com.microsoft.VSCode",
+	-- 	tags = { "coding" },
+	-- },
 	["com.toggl.toggldesktop.TogglDesktop"] = {
 		bundleID = "com.toggl.toggldesktop.TogglDesktop",
 		whitelisted = true,
