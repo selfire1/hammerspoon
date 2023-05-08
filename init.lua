@@ -55,16 +55,33 @@ Hyper:bind({}, "k", nil, function()
       display notification with title "Copied from Obsidian"
     ]])
 	else
+		-- Copy markdown link and tab title from arc
+		hs.eventtap.keyStroke({ "cmd", "shift", "alt" }, "c")
+
 		-- Copy markdown link and tab title from brave
-		return hs.osascript.applescript([[
-    tell application "Brave Browser" to set vTitle to (title of active tab of front window)
-  tell application "Brave Browser" to set vURL to URL of active tab of front window
-  
-  display notification vURL with title "Copied from Brave" subtitle vTitle
-  
-  set the clipboard to "[" & vTitle & "](" & vURL & ")"
-    ]])
+		-- return hs.osascript.applescript([[
+		--   tell application "Brave Browser" to set vTitle to (title of active tab of front window)
+		-- tell application "Brave Browser" to set vURL to URL of active tab of front window
+		--
+		-- display notification vURL with title "Copied from Brave" subtitle vTitle
+		--
+		-- set the clipboard to "[" & vTitle & "](" & vURL & ")"
+		--   ]])
 	end
+end)
+
+-- focus localhost
+Hyper:bind({}, "a", nil, function()
+	hs.osascript.applescript([[
+tell application "Arc"
+	tell front window
+		tell space "PixelPixel"
+			tell tab 1 to select
+		end tell
+	end tell
+	activate
+end tell
+    ]])
 end)
 
 -- Jump to google hangout or zoom
