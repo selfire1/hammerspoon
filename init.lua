@@ -6,7 +6,7 @@ Config = {}
 Config.applications = require("configApplications")
 
 local function getCurrentFocus()
-	-- make sure to give Hammerspoon full disk access in System Settings
+	-- requires Hammerspoon to have full disk access in System Setings
 
 	local _, focusMode = hs.osascript.javascript([[
 // https://gist.github.com/drewkerr/0f2b61ce34e2b9e3ce0ec6a92ab05c18
@@ -87,21 +87,21 @@ end)
 Movewindows = require("movewindows")
 Movewindows.start()
 
-Brave = require("brave")
-Brave.start(Config)
+-- Brave = require("brave")
+-- Brave.start(Config)
 
-Obsidian = require("obsidian")
-Obsidian.start(Config)
+-- Obsidian = require("obsidian")
+-- Obsidian.start(Config)
 
-Url = require("urlscheme")
-Url.start(Config)
+-- Url = require("urlscheme")
+-- Url.start(Config)
 
-Todoist = require("todoist")
-Todoist.start(Config)
+-- Todoist = require("todoist")
+-- Todoist.start(Config)
 
-Hyper:bind({}, "space", nil, function()
-	hs.eventtap.keyStroke("ctrl", "b")
-end)
+-- Hyper:bind({}, "space", nil, function()
+-- 	hs.eventtap.keyStroke("ctrl", "b")
+-- end)
 
 -- Hammerspoon bindings
 Hyper:bind({}, "h", nil, function()
@@ -150,9 +150,9 @@ end tell
     ]])
 end)
 
-Hyper:bind({}, "t", nil, function()
-	print(getCurrentFocus())
-end)
+-- Hyper:bind({}, "t", nil, function()
+-- 	print(getCurrentFocus())
+-- end)
 
 -- focus messenger
 -- Hyper:bind({}, "m", nil, function()
@@ -191,12 +191,12 @@ end)
 -- end)
 
 -- URL binding
-hs.urlevent.bind("move", function(eventName, params)
-	Url.move(eventName, params)
-end)
+-- hs.urlevent.bind("move", function(eventName, params)
+-- 	Url.move(eventName, params)
+-- end)
 
-Hyper:bind({}, "w", nil, function()
-	local window = hs.window.frontmostWindow()
-	hs.alert.show(window)
-	window:moveToUnit(hs.layout.left50)
-end)
+-- Hyper:bind({}, "w", nil, function()
+-- 	local window = hs.window.frontmostWindow()
+-- 	hs.alert.show(window)
+-- 	window:moveToUnit(hs.layout.left50)
+-- end)
