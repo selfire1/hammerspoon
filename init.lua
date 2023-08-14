@@ -62,30 +62,20 @@ run()
 	return focusMode
 end
 
-Focus = getCurrentFocus()
-
 hs.fnutils.each(Config.applications, function(appConfig)
 	if appConfig.hyperKey then
 		-- has hyper key
-		if not appConfig.focus then
-			-- does not have focus attached
-			Hyper:bind({}, appConfig.hyperKey, function()
-				hs.application.launchOrFocusByBundleID(appConfig.bundleID)
-			end)
-		else
-			-- has specific focus attached
-			if appConfig.focus == string.lower(Focus) then
-				-- application focus is current focus -> bind hyper key
-
-				Hyper:bind({}, appConfig.hyperKey, function()
-					hs.application.launchOrFocusByBundleID(appConfig.bundleID)
-				end)
-			else
-				Hyper:bind({}, appConfig.hyperKey, function()
+		Hyper:bind({}, appConfig.hyperKey, function()
+			if appConfig.focus then
+				local currentFocus = getCurrentFocus()
+				if not appConfig.focus == string.lower(currentFocus) then
+					-- has a focus set, which is not the current
 					hs.alert.show("Not set in this focus")
-				end)
+					return
+				end
 			end
-		end
+			hs.application.launchOrFocusByBundleID(appConfig.bundleID)
+		end)
 	end
 	if appConfig.localBindings then
 		hs.fnutils.each(appConfig.localBindings, function(key)
