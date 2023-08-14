@@ -9,13 +9,20 @@ return {
 		hyperKey = "t",
 		local_bindings = { ".", "q" },
 	},
+	["net.shinyfrog.bear"] = {
+		bundleID = "net.shinyfrog.bear",
+		hyperKey = "b",
+	},
+
 	["com.tinyspeck.slackmacgap"] = {
 		bundleID = "com.tinyspeck.slackmacgap",
-		hyperKey = "g",
+		hyperKey = "e",
+		focus = "work",
 	},
 	["com.clickup.desktop-app"] = {
 		bundleID = "com.clickup.desktop-app",
-		hyperKey = "p",
+		hyperKey = "u",
+		focus = "work",
 	},
 
 	["com.figma.Desktop"] = {
@@ -40,14 +47,14 @@ return {
 		-- hyperKey = "l",
 		tags = { "browser", "research", "transfer" },
 	},
-	["desktop.WhatsApp"] = {
-		bundleID = "desktop.WhatsApp",
-		-- hyperKey = "n",
+	["WhatsApp"] = {
+		bundleID = "WhatsApp",
+		hyperKey = "n",
 		tags = { "communication", "messenger" },
 	},
 	["com.facebook.archon"] = {
-		bundleID = "com.cacebook.archon",
-		-- hyperKey = "m",
+		bundleID = "com.facebook.archon",
+		hyperKey = "m",
 		tags = { "communication", "messenger" },
 	},
 	["com.flexibits.fantastical2.mac"] = {

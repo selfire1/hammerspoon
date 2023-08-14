@@ -5,11 +5,87 @@ Hyper:bindHotKeys({ hyperKey = { {}, "F19" } })
 Config = {}
 Config.applications = require("configApplications")
 
+local function getCurrentFocus()
+	-- make sure to give Hammerspoon full disk access in System Settings
+
+	local _, focusMode = hs.osascript.javascript([[
+// https://gist.github.com/drewkerr/0f2b61ce34e2b9e3ce0ec6a92ab05c18
+const app = Application.currentApplication()
+app.includeStandardAdditions = true
+
+function getJSON(path) {
+	const fullPath = path.replace(/^~/, app.pathTo('home folder'))
+	const contents = app.read(fullPath)
+	return JSON.parse(contents)
+}
+
+function run() {
+
+	let focus = "No focus" // default
+	const assert = getJSON("~/Library/DoNotDisturb/DB/Assertions.json").data[0].storeAssertionRecords
+	const config = getJSON("~/Library/DoNotDisturb/DB/ModeConfigurations.json").data[0].modeConfigurations
+
+	if (assert) { // focus set manually
+
+		const modeid = assert[0].assertionDetails.assertionDetailsModeIdentifier
+		focus = config[modeid].mode.name
+
+	} else { // focus set by trigger
+
+		const date = new Date
+		const now = date.getHours() * 60 + date.getMinutes()
+
+		for (const modeid in config) {
+
+			const triggers = config[modeid].triggers.triggers[0]
+			if (triggers && triggers.enabledSetting == 2) {
+
+				const start = triggers.timePeriodStartTimeHour * 60 + triggers.timePeriodStartTimeMinute
+				const end = triggers.timePeriodEndTimeHour * 60 + triggers.timePeriodEndTimeMinute
+				if (start < end) {
+					if (now >= start && now < end) {
+						focus = config[modeid].mode.name
+					}
+				} else if (start > end) { // includes midnight
+					if (now >= start || now < end) {
+						focus = config[modeid].mode.name
+					}
+				}
+			}
+		}
+	}
+	return focus
+}
+
+run()
+  ]])
+	return focusMode
+end
+
+Focus = getCurrentFocus()
+
 hs.fnutils.each(Config.applications, function(appConfig)
 	if appConfig.hyperKey then
-		Hyper:bind({}, appConfig.hyperKey, function()
-			hs.application.launchOrFocusByBundleID(appConfig.bundleID)
-		end)
+		-- has hyper key
+		if not appConfig.focus then
+			-- does not have focus attached
+			Hyper:bind({}, appConfig.hyperKey, function()
+				hs.application.launchOrFocusByBundleID(appConfig.bundleID)
+			end)
+		else
+			-- has specific focus attached
+			if appConfig.focus == string.lower(Focus) then
+				-- application focus is current focus -> bind hyper key
+
+				Hyper:bind({}, appConfig.hyperKey, function()
+					hs.application.launchOrFocusByBundleID(appConfig.bundleID)
+				end)
+			else
+				Hyper:bind({}, appConfig.hyperKey, function()
+					hs.alert.show("Not set in this focus")
+				end)
+			end
+		end
 	end
 	if appConfig.localBindings then
 		hs.fnutils.each(appConfig.localBindings, function(key)
@@ -84,6 +160,24 @@ end tell
     ]])
 end)
 
+Hyper:bind({}, "t", nil, function()
+	print(getCurrentFocus())
+end)
+
+-- focus messenger
+-- Hyper:bind({}, "m", nil, function()
+-- 	hs.osascript.applescript([[
+-- tell application "Arc"
+-- 	tell front window
+-- 		tell space "Personal"
+-- 			tell tab 1 to select
+-- 		end tell
+-- 	end tell
+-- 	activate
+-- end tell
+--     ]])
+-- end)
+
 -- Jump to google hangout or zoom
 Hyper:bind({}, "z", nil, function()
 	if hs.application.find("us.zoom.xos") then
@@ -91,8 +185,8 @@ Hyper:bind({}, "z", nil, function()
 	else
 		if hs.application.find("com.hnc.Discord") then
 			hs.application.launchOrFocusByBundleID("com.hnc.Discord")
-		else
-			Brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
+			-- else
+			-- 	Brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
 		end
 	end
 end)
