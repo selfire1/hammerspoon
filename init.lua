@@ -137,11 +137,24 @@ Hyper:bind({}, "k", nil, function()
 end)
 
 -- focus localhost
+-- Hyper:bind({}, "a", nil, function()
+-- 	hs.osascript.applescript([[
+-- tell application "Arc"
+-- 	tell front window
+-- 		tell space "PixelPixel"
+-- 			tell tab 1 to select
+-- 		end tell
+-- 	end tell
+-- 	activate
+-- end tell
+--     ]])
+-- end)
+
 Hyper:bind({}, "a", nil, function()
 	hs.osascript.applescript([[
 tell application "Arc"
 	tell front window
-		tell space "PixelPixel"
+		tell active space
 			tell tab 1 to select
 		end tell
 	end tell
@@ -151,7 +164,15 @@ end tell
 end)
 
 -- Hyper:bind({}, "t", nil, function()
--- 	print(getCurrentFocus())
+-- hs.http.asyncGet("https://api.clickup.com/api/v2/team/6920852/time_entries/current",
+--     {
+--       ["Content-Type"] = "application/json",
+--       ["Authorization"] = "pk_60680541_ZVYIQDJVDPGOQTL2X6GWX5JKWC1SH9I2",
+--     },
+--     function(http_number, body, headers)
+--       print(hs.json.decode(body).data.task.custom_id)
+--     end
+--   )
 -- end)
 
 -- focus messenger
