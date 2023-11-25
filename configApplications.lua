@@ -6,8 +6,12 @@ return {
 			{ nil, 2, hs.layout.maximized },
 		},
 		whitelisted = true,
-		hyperKey = "t",
+		-- hyperKey = "t",
 		local_bindings = { ".", "q" },
+	},
+	["com.culturedcode.ThingsMac"] = {
+		bundleID = "com.culturedcode.ThingsMac",
+		hyperKey = "t",
 	},
 	["net.shinyfrog.bear"] = {
 		bundleID = "net.shinyfrog.bear",
