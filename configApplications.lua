@@ -51,8 +51,8 @@ return {
 		-- hyperKey = "l",
 		tags = { "browser", "research", "transfer" },
 	},
-	["WhatsApp"] = {
-		bundleID = "WhatsApp",
+	["net.whatsapp.WhatsApp"] = {
+		bundleID = "net.whatsapp.WhatsApp",
 		hyperKey = "n",
 		tags = { "communication", "messenger" },
 	},
