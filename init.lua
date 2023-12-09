@@ -163,6 +163,7 @@ end tell
     ]])
 end)
 
+-- https://thesweetsetup.com/oopsiethings-applescript-for-things-on-mac/
 Hyper:bind({}, "q", nil, function()
 	hs.osascript.applescript([[
 on appIsRunning(GTDAppName)
