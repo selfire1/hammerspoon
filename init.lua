@@ -163,6 +163,24 @@ end tell
     ]])
 end)
 
+Hyper:bind({}, "q", nil, function()
+	hs.osascript.applescript([[
+on appIsRunning(GTDAppName)
+	tell application "System Events"
+		return (count of (application processes whose name is GTDAppName)) is not 0
+	end tell
+end appIsRunning
+
+if appIsRunning("Things3") then
+	null
+else
+	tell application "Things3" to run
+end if
+
+tell application "Things3" to show quick entry panel
+    ]])
+end)
+
 -- Hyper:bind({}, "t", nil, function()
 -- hs.http.asyncGet("https://api.clickup.com/api/v2/team/6920852/time_entries/current",
 --     {
