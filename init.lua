@@ -120,6 +120,11 @@ Hyper:bind({}, "k", nil, function()
 		return hs.osascript.applescript([[
       display notification with title "Copied from Obsidian"
     ]])
+	elseif string.find(tostring(hs.window.frontmostWindow()), "Bear") then
+		hs.eventtap.keyStroke({ "cmd", "shift", "alt" }, "l")
+		return hs.osascript.applescript([[
+      display notification with title "Copied link note"
+    ]])
 	else
 		-- Copy markdown link and tab title from arc
 		hs.eventtap.keyStroke({ "cmd", "shift", "alt" }, "c")
