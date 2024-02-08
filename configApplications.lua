@@ -119,6 +119,9 @@ return {
 		bundleID = "net.kovidgoyal.kitty",
 		hyperKey = "i",
 	},
+	["com.github.wez.wezterm"] = {
+		bundleID = "com.github.wez.wezterm",
+	},
 	-- ["com.microsoft.VSCode"] = {
 	-- 	bundleID = "com.microsoft.VSCode",
 	-- 	tags = { "coding" },
