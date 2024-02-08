@@ -123,16 +123,6 @@ Hyper:bind({}, "k", nil, function()
 	else
 		-- Copy markdown link and tab title from arc
 		hs.eventtap.keyStroke({ "cmd", "shift", "alt" }, "c")
-
-		-- Copy markdown link and tab title from brave
-		-- return hs.osascript.applescript([[
-		--   tell application "Brave Browser" to set vTitle to (title of active tab of front window)
-		-- tell application "Brave Browser" to set vURL to URL of active tab of front window
-		--
-		-- display notification vURL with title "Copied from Brave" subtitle vTitle
-		--
-		-- set the clipboard to "[" & vTitle & "](" & vURL & ")"
-		--   ]])
 	end
 end)
 
