@@ -8,8 +8,9 @@ movewindows.start = function()
 
 	-- Loading Spoons
 	hs.loadSpoon("MiroWindowsManager")
+	hs.loadSpoon("WindowScreenLeftAndRight")
 
-	-- Settings Windows Manager
+	-- Miro Windows Manager: for moving windows on one screen
 	hs.window.animationDuration = 0
 	spoon.MiroWindowsManager:bindHotkeys({
 		up = { cmd_alt, "up" },
@@ -19,7 +20,7 @@ movewindows.start = function()
 		fullscreen = { cmd_alt, "m" },
 	})
 
-	hs.loadSpoon("WindowScreenLeftAndRight")
+	-- WindowScreenLeftAndRight: for moving windows between screens
 	spoon.WindowScreenLeftAndRight.animationDuration = 0
 	spoon.WindowScreenLeftAndRight:bindHotkeys({
 		screen_left = { ctrl_cmd, "Left" },
