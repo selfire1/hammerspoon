@@ -87,18 +87,6 @@ end)
 Movewindows = require("movewindows")
 Movewindows.start()
 
--- Brave = require("brave")
--- Brave.start(Config)
-
--- Obsidian = require("obsidian")
--- Obsidian.start(Config)
-
--- Url = require("urlscheme")
--- Url.start(Config)
-
--- Todoist = require("todoist")
--- Todoist.start(Config)
-
 -- Hyper:bind({}, "space", nil, function()
 -- 	hs.eventtap.keyStroke("ctrl", "b")
 -- end)
