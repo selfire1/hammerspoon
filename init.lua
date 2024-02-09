@@ -87,10 +87,6 @@ end)
 Movewindows = require("movewindows")
 Movewindows.start()
 
--- Hyper:bind({}, "space", nil, function()
--- 	hs.eventtap.keyStroke("ctrl", "b")
--- end)
-
 -- Hammerspoon bindings
 Hyper:bind({}, "h", nil, function()
 	hs.application.launchOrFocusByBundleID("org.hammerspoon.Hammerspoon")
@@ -151,32 +147,6 @@ tell application "Things3" to show quick entry panel
     ]])
 end)
 
--- Hyper:bind({}, "t", nil, function()
--- hs.http.asyncGet("https://api.clickup.com/api/v2/team/6920852/time_entries/current",
---     {
---       ["Content-Type"] = "application/json",
---       ["Authorization"] = "pk_60680541_ZVYIQDJVDPGOQTL2X6GWX5JKWC1SH9I2",
---     },
---     function(http_number, body, headers)
---       print(hs.json.decode(body).data.task.custom_id)
---     end
---   )
--- end)
-
--- focus messenger
--- Hyper:bind({}, "m", nil, function()
--- 	hs.osascript.applescript([[
--- tell application "Arc"
--- 	tell front window
--- 		tell space "Personal"
--- 			tell tab 1 to select
--- 		end tell
--- 	end tell
--- 	activate
--- end tell
---     ]])
--- end)
-
 -- Jump to google hangout or zoom
 Hyper:bind({}, "z", nil, function()
 	if hs.application.find("us.zoom.xos") then
@@ -189,23 +159,3 @@ Hyper:bind({}, "z", nil, function()
 		end
 	end
 end)
-
--- Todoist global quick add
--- Hyper:bind({}, "u", nil, function()
--- 	hs.application.launchOrFocusByBundleID("com.microsoft.VSCode")
--- 	hs.eventtap.keyStroke({ "cmd" }, "s")
--- 	hs.application.launchOrFocusByBundleID("com.brave.Browser")
--- 	hs.eventtap.keyStroke({ "cmd" }, "r")
--- 	hs.application.launchOrFocusByBundleID("com.microsoft.VSCode")
--- end)
-
--- URL binding
--- hs.urlevent.bind("move", function(eventName, params)
--- 	Url.move(eventName, params)
--- end)
-
--- Hyper:bind({}, "w", nil, function()
--- 	local window = hs.window.frontmostWindow()
--- 	hs.alert.show(window)
--- 	window:moveToUnit(hs.layout.left50)
--- end)
