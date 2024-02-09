@@ -1,7 +1,6 @@
 return {
 	["com.todoist.mac.Todoist"] = {
 		bundleID = "com.todoist.mac.Todoist",
-		tags = { "review", "tasks" },
 		layouts = {
 			{ nil, 2, hs.layout.maximized },
 		},
@@ -36,11 +35,9 @@ return {
 	["com.hnc.Discord"] = {
 		bundleID = "com.hnc.Discord",
 		hyperKey = "d",
-		tags = { "communication", "voicechat", "distraction" },
 	},
 	["org.mozilla.firefox"] = {
 		bundleID = "org.mozilla.firefox",
-		tags = { "browser" },
 	},
 	["company.thebrowser.Browser"] = {
 		bundleID = "company.thebrowser.Browser",
@@ -49,31 +46,25 @@ return {
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
 		-- hyperKey = "l",
-		tags = { "browser", "research", "transfer" },
 	},
 	["net.whatsapp.WhatsApp"] = {
 		bundleID = "net.whatsapp.WhatsApp",
 		hyperKey = "n",
-		tags = { "communication", "messenger" },
 	},
 	["com.facebook.archon"] = {
 		bundleID = "com.facebook.archon",
 		hyperKey = "m",
-		tags = { "communication", "messenger" },
 	},
 	["com.flexibits.fantastical2.mac"] = {
 		bundleID = "com.flexibits.fantastical2.mac",
 		hyperKey = "c",
-		tags = { "planning", "review", "calendar" },
 		whitelisted = true,
 	},
 	["com.valvesoftware.steam"] = {
 		bundleID = "com.valvesoftware.steam",
-		tags = { "distraction", "gaming" },
 	},
 	["com.nvidia.gfnpc.mall"] = {
 		bundleID = "com.nvidia.gfnpc.mall",
-		tags = { "distraction", "gaming" },
 	},
 	["com.spotify.client"] = {
 		bundleID = "com.spotify.client",
@@ -82,30 +73,24 @@ return {
 	["md.obsidian"] = {
 		bundleID = "md.obsidian",
 		hyperKey = "o",
-		tags = { "research", "notes", "writing" },
 	},
 	["com.twistapp.mac-sparkle.Twist"] = {
 		bundleID = "com.twistapp.mac-sparkle.Twist",
-		tags = { "work", "work_twist" },
 		rules = {
 			{ nil, 2, hs.layout.left50 },
 		},
 	},
 	["com.amazon.Kindle"] = {
 		bundleID = "com.amazon.Kindle",
-		tags = { "transfer" },
 	},
 	["com.evernote.Evernote"] = {
 		bundleID = "com.evernote.Evernote",
-		tags = { "transfer" },
 	},
 	["com.github.atom"] = {
 		bundleID = "com.github.atom",
-		tags = { "coding" },
 	},
 	["org.whispersystems.signal-desktop"] = {
 		bundleID = "org.whispersystems.signal-desktop",
-		tags = { "distraction", "communication" },
 		-- hyperKey = "e",
 	},
 	["maccatalyst.com.endel.endel"] = {
@@ -133,7 +118,6 @@ return {
 	["com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi"] = {
 		bundleID = "com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi",
 		-- hyperKey = "x",
-		tags = { "work" },
 	},
 	["com.staysorted.Sorted"] = {
 		bundleID = "com.staysorted.Sorted",
