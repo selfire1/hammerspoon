@@ -54,7 +54,7 @@ return {
 	},
 	["com.spotify.client"] = {
 		bundleID = "com.spotify.client",
-		hyperKey = "s",
+		-- hyperKey = "s",
 	},
 	["md.obsidian"] = {
 		bundleID = "md.obsidian",
