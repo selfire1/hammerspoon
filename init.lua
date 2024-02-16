@@ -298,3 +298,19 @@ HyperModal
 Hyper:bind({}, "s", function()
 	HyperModal:toggle()
 end)
+
+-- yabai can't keep track of Bear, so we need to restart the yabai service whenever Bear is launched
+-- https://github.com/koekeishiya/yabai/issues/1410
+hs.application.watcher
+	.new(function(appName, event, hsapp)
+		if event == hs.application.watcher.launched and hsapp:bundleID() == "net.shinyfrog.bear" then
+			-- hacky delay - it takes a moment for Bear to actually launched after the launch event fires
+			hs.timer.delayed
+				.new(1, function()
+					-- hs.alert("Reloading yabai")
+					yabai({ "--restart-service" })
+				end)
+				:start()
+		end
+	end)
+	:start()
