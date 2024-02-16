@@ -1,4 +1,5 @@
 hs.loadSpoon("Hyper")
+hs.loadSpoon("HyperModal")
 Hyper = spoon.Hyper
 Hyper:bindHotKeys({ hyperKey = { {}, "F19" } })
 
@@ -158,4 +159,142 @@ Hyper:bind({}, "z", nil, function()
 			-- 	Brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
 		end
 	end
+end)
+
+-- https://github.com/dmitriiminaev/Hammerspoon-Yabai/blob/master/.hammerspoon/init.lua
+local yabai = function(args, completion)
+	local yabai_output = ""
+	local yabai_error = ""
+	-- Runs in background very fast
+	local yabai_task = hs.task.new("/opt/homebrew/bin/yabai", function(err, stdout, stderr)
+		print()
+	end, function(task, stdout, stderr)
+		-- print("stdout:"..stdout, "stderr:"..stderr)
+		if stdout ~= nil then
+			yabai_output = yabai_output .. stdout
+		end
+		if stderr ~= nil then
+			yabai_error = yabai_error .. stderr
+		end
+		return true
+	end, args)
+	if type(completion) == "function" then
+		yabai_task:setCallback(function()
+			completion(yabai_output, yabai_error)
+		end)
+	end
+	yabai_task:start()
+end
+
+HyperModal = spoon.HyperModal
+HyperModal
+	:start()
+	-- my setup
+	-- move between windows
+	-- TODO: Implement moving focus across diplays
+	-- https://github.com/koekeishiya/yabai/issues/526#issuecomment-639899511
+	-- alt - h : yabai -m window --focus west || yabai -m display --focus west
+	-- alt - j : yabai -m window --focus south || yabai -m display --focus south
+	-- alt - k : yabai -m window --focus north || yabai -m display --focus north
+	-- alt - l : yabai -m window --focus east || yabai -m display --focus east
+	:bind(
+		"",
+		"h",
+		function()
+			yabai({ "-m", "window", "--focus", "west" })
+			HyperModal:exit()
+		end
+	)
+	:bind("", "j", function()
+		yabai({ "-m", "window", "--focus", "south" })
+		HyperModal:exit()
+	end)
+	:bind("", "k", function()
+		yabai({ "-m", "window", "--focus", "north" })
+		HyperModal:exit()
+	end)
+	:bind("", "l", function()
+		yabai({ "-m", "window", "--focus", "east" })
+		HyperModal:exit()
+	end)
+	-- evan's setup
+	:bind("", "1", function()
+		yabai({ "-m", "window", "--swap", "first" })
+		HyperModal:exit()
+	end)
+	:bind("", "z", function()
+		yabai({ "-m", "window", "--toggle", "zoom-parent" })
+		HyperModal:exit()
+	end)
+	:bind("", "v", function()
+		yabai({ "-m", "space", "--mirror", "y-axis" })
+		HyperModal:exit()
+	end)
+	:bind("", "x", function()
+		yabai({ "-m", "window", "--toggle", "split" })
+		HyperModal:exit()
+	end)
+	:bind("", "space", function()
+		yabai({ "-m", "window", "--toggle", "zoom-fullscreen" })
+		HyperModal:exit()
+	end)
+	:bind({ "ctrl" }, "h", function()
+		yabai({ "-m", "window", "--swap", "west" })
+		HyperModal:exit()
+	end)
+	:bind({ "ctrl" }, "j", function()
+		yabai({ "-m", "window", "--swap", "south" })
+		HyperModal:exit()
+	end)
+	:bind({ "ctrl" }, "k", function()
+		yabai({ "-m", "window", "--swap", "north" })
+		HyperModal:exit()
+	end)
+	:bind({ "ctrl" }, "l", function()
+		yabai({ "-m", "window", "--swap", "east" })
+		HyperModal:exit()
+	end)
+	:bind({ "alt" }, "h", function()
+		yabai({ "-m", "window", "--warp", "west" })
+		HyperModal:exit()
+	end)
+	:bind({ "alt" }, "j", function()
+		yabai({ "-m", "window", "--warp", "south" })
+		HyperModal:exit()
+	end)
+	:bind({ "alt" }, "k", function()
+		yabai({ "-m", "window", "--warp", "north" })
+		HyperModal:exit()
+	end)
+	:bind({ "alt" }, "l", function()
+		yabai({ "-m", "window", "--warp", "east" })
+		HyperModal:exit()
+	end)
+	:bind({ "shift" }, "l", function()
+		yabai({ "-m", "window", "--display", "east" })
+		HyperModal:exit()
+	end)
+	:bind({ "shift" }, "h", function()
+		yabai({ "-m", "window", "--display", "west" })
+		HyperModal:exit()
+	end)
+	:bind("", "s", function()
+		yabai({ "-m", "window", "--stack", "mouse" })
+		HyperModal:exit()
+	end)
+	:bind("", "r", function()
+		yabai({ "-m", "space", "--balance" })
+		HyperModal:exit()
+	end)
+	:bind({ "shift" }, "b", function()
+		yabai({ "-m", "space", "--layout", "stack" })
+		HyperModal:exit()
+	end)
+	:bind("", "b", function()
+		yabai({ "-m", "space", "--layout", "bsp" })
+		HyperModal:exit()
+	end)
+
+Hyper:bind({}, "s", function()
+	HyperModal:toggle()
 end)
