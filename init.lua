@@ -228,7 +228,7 @@ HyperModal
 		HyperModal:exit()
 	end)
 	:bind("", "4", function()
-		yabai({ "-m", "window", "--ratio", "abs:0.66" })
+		yabai({ "-m", "window", "--ratio", "abs:0.6" })
 		HyperModal:exit()
 	end)
 	:bind("", "3", function()
