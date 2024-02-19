@@ -197,6 +197,11 @@ HyperModal
 	-- alt - j : yabai -m window --focus south || yabai -m display --focus south
 	-- alt - k : yabai -m window --focus north || yabai -m display --focus north
 	-- alt - l : yabai -m window --focus east || yabai -m display --focus east
+	--
+	-- or: alt - right : yabai -m window --focus east || \
+	-- yabai -m window --focus $(yabai -m query --windows --display east | \
+	-- jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | first | .id') || \
+	-- from https://github.com/koekeishiya/yabai/issues/953#issuecomment-874406181
 	:bind(
 		"",
 		"h",
