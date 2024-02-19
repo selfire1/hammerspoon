@@ -58,7 +58,6 @@ return {
 	},
 	["md.obsidian"] = {
 		bundleID = "md.obsidian",
-		hyperKey = "o",
 	},
 	["com.amazon.Kindle"] = {
 		bundleID = "com.amazon.Kindle",
