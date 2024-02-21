@@ -31,7 +31,6 @@ yabaiconfig.start = function()
 
 	HyperModal
 		:start()
-		-- my setup
 		-- move between windows
 		-- TODO: Implement moving focus across diplays
 		-- https://github.com/koekeishiya/yabai/issues/526#issuecomment-639899511
