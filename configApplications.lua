@@ -32,7 +32,6 @@ return {
 	},
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
-		-- hyperKey = "l",
 	},
 	["net.whatsapp.WhatsApp"] = {
 		bundleID = "net.whatsapp.WhatsApp",
@@ -55,7 +54,6 @@ return {
 	},
 	["com.spotify.client"] = {
 		bundleID = "com.spotify.client",
-		-- hyperKey = "s",
 	},
 	["md.obsidian"] = {
 		bundleID = "md.obsidian",
@@ -65,7 +63,6 @@ return {
 	},
 	["org.whispersystems.signal-desktop"] = {
 		bundleID = "org.whispersystems.signal-desktop",
-		-- hyperKey = "e",
 	},
 	["maccatalyst.com.endel.endel"] = {
 		bundleID = "maccatalyst.com.endel.endel",

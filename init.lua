@@ -29,13 +29,10 @@ end)
 
 Focusmode = require("focusmode")
 
-Movewindows = require("movewindows")
-Movewindows.start()
-
 Yabai = require("yabaiconfig")
 Yabai.start()
 
--- Hammerspoon bindings
+-- Hyper bindings
 Hyper:bind({}, "h", nil, function()
 	hs.application.launchOrFocusByBundleID("org.hammerspoon.Hammerspoon")
 end)
@@ -102,8 +99,6 @@ Hyper:bind({}, "z", nil, function()
 	else
 		if hs.application.find("com.hnc.Discord") then
 			hs.application.launchOrFocusByBundleID("com.hnc.Discord")
-			-- else
-			-- 	Brave.jump("meet.google.com|hangouts.google.com.call|discord.com")
 		end
 	end
 end)
