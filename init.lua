@@ -206,11 +206,6 @@ HyperModal
 		yabai({ "-m", "space", "--mirror", "y-axis" })
 		HyperModal:exit()
 	end)
-	-- swap vertical/horizontal split
-	:bind("", "x", function()
-		yabai({ "-m", "window", "--toggle", "split" })
-		HyperModal:exit()
-	end)
 	-- maximise window
 	:bind("", "m", function()
 		yabai({ "-m", "window", "--toggle", "zoom-fullscreen" })
@@ -257,11 +252,6 @@ HyperModal
 	end)
 	:bind({ "shift" }, "h", function()
 		yabai({ "-m", "window", "--display", "west" })
-		HyperModal:exit()
-	end)
-	-- currently focused window stacks itself with window under mouse cursor
-	:bind("", "s", function()
-		yabai({ "-m", "window", "--stack", "mouse" })
 		HyperModal:exit()
 	end)
 	-- balance windows
