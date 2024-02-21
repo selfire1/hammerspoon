@@ -15,7 +15,7 @@ function getJSON(path) {
 
 function run() {
 
-	let focus = "No focus" // default
+	let focus = "none" // default
 	const assert = getJSON("~/Library/DoNotDisturb/DB/Assertions.json").data[0].storeAssertionRecords
 	const config = getJSON("~/Library/DoNotDisturb/DB/ModeConfigurations.json").data[0].modeConfigurations
 

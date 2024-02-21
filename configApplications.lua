@@ -24,7 +24,7 @@ return {
 	["com.hnc.Discord"] = {
 		bundleID = "com.hnc.Discord",
 		hyperKey = "d",
-		focus = "No focus",
+		focus = "none",
 	},
 	["company.thebrowser.Browser"] = {
 		bundleID = "company.thebrowser.Browser",
