@@ -104,13 +104,19 @@ Hyper:bind({}, "z", nil, function()
 end)
 
 Hyper:bind({}, "SPACE", nil, function()
-	local home = os.getenv("HOME")
-	hs.task
-		.new("/opt/homebrew/bin/zx", function(err, stdout, stderr)
-			print()
-		end, function(_, stdout, stderr)
-			print("stdout:" .. stdout, "stderr:" .. stderr)
-			return true
-		end, { home .. "/.hammerspoon/test.mjs" })
-		:start()
+	hs.osascript.applescript([[
+  open location "raycast://script-commands/autolayout"
+  ]])
 end)
+
+-- Hyper:bind({}, "SPACE", nil, function()
+-- 	local home = os.getenv("HOME")
+-- 	hs.task
+-- 		.new("/opt/homebrew/bin/zx", function(err, stdout, stderr)
+-- 			print()
+-- 		end, function(_, stdout, stderr)
+-- 			print("stdout:" .. stdout, "stderr:" .. stderr)
+-- 			return true
+-- 		end, { home .. "/.hammerspoon/test.mjs" })
+-- 		:start()
+-- end)
