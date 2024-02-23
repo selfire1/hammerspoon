@@ -9,10 +9,10 @@ hs.fnutils.each(Config.applications, function(appConfig)
 	if appConfig.hyperKey then
 		-- has hyper key
 		Hyper:bind({}, appConfig.hyperKey, function()
-			if appConfig.focus then
+			if appConfig.focus or appConfig.focusExclude then
 				local currentFocus = Focusmode.getCurrentFocus()
-				if appConfig.focus ~= string.lower(currentFocus) then
-					-- has a focus set, which is not the current
+				local currentNormalised = string.lower(currentFocus)
+				if appConfig.focusExclude == currentNormalised or appConfig.focus ~= currentNormalised then
 					hs.alert.show("Not set in this focus")
 					return
 				end
