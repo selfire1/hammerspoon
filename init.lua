@@ -102,3 +102,15 @@ Hyper:bind({}, "z", nil, function()
 		end
 	end
 end)
+
+Hyper:bind({}, "SPACE", nil, function()
+	local home = os.getenv("HOME")
+	hs.task
+		.new("/opt/homebrew/bin/zx", function(err, stdout, stderr)
+			print()
+		end, function(_, stdout, stderr)
+			print("stdout:" .. stdout, "stderr:" .. stderr)
+			return true
+		end, { home .. "/.hammerspoon/test.mjs" })
+		:start()
+end)
