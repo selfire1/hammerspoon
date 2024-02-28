@@ -176,6 +176,11 @@ yabaiconfig.start = function()
 			yabai({ "-m", "space", "--layout", "bsp" })
 			HyperModal:exit()
 		end)
+		-- swap vertical/horizontal split
+		:bind("", "x", function()
+			yabai({ "-m", "window", "--toggle", "split" })
+			HyperModal:exit()
+		end)
 
 	Hyper:bind({}, "s", function()
 		HyperModal:toggle()
