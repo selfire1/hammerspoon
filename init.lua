@@ -104,19 +104,11 @@ Hyper:bind({}, "z", nil, function()
 end)
 
 Hyper:bind({}, "SPACE", nil, function()
-	hs.osascript.applescript([[
-  open location "raycast://script-commands/autolayout"
-  ]])
-end)
+	local path = os.getenv("HOME") .. "/.hammerspoon/zx-autolayout/index.mjs"
+	local currentFocus = Focusmode.getCurrentFocus()
 
--- Hyper:bind({}, "SPACE", nil, function()
--- 	local home = os.getenv("HOME")
--- 	hs.task
--- 		.new("/opt/homebrew/bin/zx", function(err, stdout, stderr)
--- 			print()
--- 		end, function(_, stdout, stderr)
--- 			print("stdout:" .. stdout, "stderr:" .. stderr)
--- 			return true
--- 		end, { home .. "/.hammerspoon/test.mjs" })
--- 		:start()
--- end)
+	local output, status, _type, _rc = hs.execute("zx " .. path .. " --focus " .. currentFocus, true)
+	if not status then
+		print("Error: " .. output .. "\n")
+	end
+end)
