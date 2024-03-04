@@ -2,7 +2,7 @@
 import appConfig from "./config.js";
 
 // arguments
-const thisFocus = argv?.focus ? argv.focus.toLowerCase() : "default";
+const thisFocus = argv?.focus ? argv.focus.toLowerCase() : "none";
 const CONFIG = appConfig[thisFocus];
 
 // run

@@ -6,4 +6,11 @@ module.exports = {
       apps: [{ name: "Arc" }, { name: "kitty", focus: true }],
     },
   ],
+  none: [
+    { layout: "stack", apps: [{ name: "Bear" }] },
+    {
+      layout: "bsp",
+      apps: [{ name: "Arc" }, { name: "kitty", focus: true }],
+    },
+  ],
 };
