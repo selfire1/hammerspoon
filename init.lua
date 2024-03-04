@@ -106,8 +106,9 @@ end)
 Hyper:bind({}, "SPACE", nil, function()
 	local path = os.getenv("HOME") .. "/.hammerspoon/zx-autolayout/index.mjs"
 	local currentFocus = Focusmode.getCurrentFocus()
+	local cmd = "zx " .. path .. " --focus " .. currentFocus
 
-	local output, status, _type, _rc = hs.execute("zx " .. path .. " --focus " .. currentFocus, true)
+	local output, status, _type, _rc = hs.execute(cmd, true)
 	if not status then
 		print("Error: " .. output .. "\n")
 	end
