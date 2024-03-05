@@ -103,13 +103,9 @@ Hyper:bind({}, "z", nil, function()
 	end
 end)
 
-Hyper:bind({}, "SPACE", nil, function()
-	local path = os.getenv("HOME") .. "/.hammerspoon/zx-autolayout/index.mjs"
-	local currentFocus = Focusmode.getCurrentFocus()
-	local cmd = "zx " .. path .. " --focus " .. currentFocus .. " &"
+Autolayout = require("autolayout.init")
 
-	local output, status, _type, _rc = hs.execute(cmd, true)
-	if not status then
-		print("Error: " .. output .. "\n")
-	end
+Hyper:bind({}, "SPACE", nil, function()
+	print("Starting autolayout")
+	Autolayout.start()
 end)
