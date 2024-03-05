@@ -26,6 +26,13 @@ end
 
 work.start = function()
 	print("Starting work layout")
+	local whitelisted = { '"Arc"', '"ClickUp"', '"kitty"', '"Slack"' }
+	local joinedString = table.concat(whitelisted, " and name is not ")
+
+	local cmd = 'tell application "Finder" to set visible of every process whose visible is true and name is not "Finder" and name is not '
+		.. joinedString
+		.. " to false"
+	hs.osascript.applescript(cmd)
 end
 
 return work
