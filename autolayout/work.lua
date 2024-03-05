@@ -26,8 +26,13 @@ end
 
 work.start = function()
 	print("Starting work layout")
-	local whitelisted = { '"Arc"', '"ClickUp"', '"kitty"', '"Slack"' }
-	local joinedString = table.concat(whitelisted, " and name is not ")
+	local whitelisted = { "Arc", "ClickUp", "kitty", "Slack" }
+	local quoted = {}
+	for key, value in ipairs(whitelisted) do
+		quoted[key] = '"' .. value .. '"'
+	end
+
+	local joinedString = table.concat(quoted, " and name is not ")
 
 	local cmd = 'tell application "Finder" to set visible of every process whose visible is true and name is not "Finder" and name is not '
 		.. joinedString
