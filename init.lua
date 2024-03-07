@@ -96,10 +96,10 @@ end)
 Hyper:bind({}, "z", nil, function()
 	if hs.application.find("us.zoom.xos") then
 		hs.application.launchOrFocusByBundleID("us.zoom.xos")
-	else
-		if hs.application.find("com.hnc.Discord") then
-			hs.application.launchOrFocusByBundleID("com.hnc.Discord")
-		end
+	elseif hs.application.find("com.hnc.Discord") then
+		hs.application.launchOrFocusByBundleID("com.hnc.Discord")
+	elseif Arc.jump("teams.microsoft.com") then
+		return true
 	end
 end)
 
