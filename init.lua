@@ -109,3 +109,8 @@ Hyper:bind({}, "SPACE", nil, function()
 	print("Starting autolayout")
 	Autolayout.start()
 end)
+
+Arc = require("arc")
+Hyper:bind({}, "j", nil, function()
+	Arc.jump("devdocs.io")
+end)
