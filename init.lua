@@ -112,5 +112,8 @@ end)
 
 Arc = require("arc")
 Hyper:bind({}, "j", nil, function()
-	Arc.jump("devdocs.io")
+	if Arc.jump("devdocs.io") then
+	else
+		Arc.newTab("devdocs.io")
+	end
 end)

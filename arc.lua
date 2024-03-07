@@ -4,6 +4,13 @@
 
 local module = {}
 
+module.newTab = function(url)
+	hs.osascript.applescript(
+		'tell application "Arc" to tell front window to make new tab with properties {URL:"https://' .. url .. '"}'
+	)
+	hs.osascript.applescript('tell application "Arc" to activate')
+end
+
 module.jump = function(url)
 	local prefixedUrl = "https://" .. url
 	local function getLocationOfTab(tab)
@@ -42,11 +49,9 @@ tell application "Arc"
 
 	if position ~= "" then
 		jumpToTab(position)
+		return true
 	else
-		hs.osascript.applescript(
-			'tell application "Arc" to tell front window to make new tab with properties {URL:"' .. prefixedUrl .. '"}'
-		)
-		hs.osascript.applescript('tell application "Arc" to activate')
+		return false
 	end
 end
 
