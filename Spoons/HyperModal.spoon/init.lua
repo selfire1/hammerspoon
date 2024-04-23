@@ -13,19 +13,29 @@ m.isOpen = false
 
 function m:entered()
 	m.isOpen = true
-	m.alertUuids = hs.fnutils.map(hs.screen.allScreens(), function(screen)
-		local prompt = string.format("🖥 : %s", hs.window.focusedWindow():application():title())
-		return hs.alert.show(prompt, hs.alert.defaultStyle, screen, true)
-	end)
+
+	local f = hs.window.focusedWindow():frame()
+
+	-- https://github.com/Hammerspoon/hammerspoon/issues/2214
+	m.indicator = hs.canvas
+		.new(f)
+		:appendElements({
+			type = "rectangle",
+			action = "stroke",
+			strokeWidth = 4.0,
+			strokeColor = { hex = "#F74F9E", alpha = 0.7 },
+			roundedRectRadii = { xRadius = 14.0, yRadius = 14.0 },
+			frame = f,
+		})
+		:show()
 
 	return self
 end
 
 function m:exited()
 	m.isOpen = false
-	hs.fnutils.ieach(m.alertUuids, function(uuid)
-		hs.alert.closeSpecific(uuid)
-	end)
+
+	m.indicator:delete()
 
 	return self
 end
