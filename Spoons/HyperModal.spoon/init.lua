@@ -15,6 +15,7 @@ function m:entered()
 	m.isOpen = true
 
 	local f = hs.window.focusedWindow():frame()
+	local radius = 25.0
 
 	-- https://github.com/Hammerspoon/hammerspoon/issues/2214
 	m.indicator = hs.canvas
@@ -22,9 +23,9 @@ function m:entered()
 		:appendElements({
 			type = "rectangle",
 			action = "stroke",
-			strokeWidth = 4.0,
+			strokeWidth = 12.0,
 			strokeColor = { hex = "#F74F9E", alpha = 0.7 },
-			roundedRectRadii = { xRadius = 14.0, yRadius = 14.0 },
+			roundedRectRadii = { xRadius = radius, yRadius = radius },
 			frame = f,
 		})
 		:show()
