@@ -3,6 +3,10 @@ return {
 		bundleID = "com.culturedcode.ThingsMac",
 		hyperKey = "t",
 	},
+	["com.apple.dt.Xcode"] = {
+		bundleID = "com.apple.dt.Xcode",
+		hyperKey = "x",
+	},
 	["net.shinyfrog.bear"] = {
 		bundleID = "net.shinyfrog.bear",
 		hyperKey = "b",
