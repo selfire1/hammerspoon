@@ -39,7 +39,7 @@ return {
 	},
 	["com.seriflabs.affinityphoto"] = {
 		bundleID = "com.seriflabs.affinityphoto",
-		hyperKey = "a",
+		hyperKey = "y",
 	},
 	["net.whatsapp.WhatsApp"] = {
 		bundleID = "net.whatsapp.WhatsApp",
