@@ -37,6 +37,10 @@ return {
 	["com.brave.Browser"] = {
 		bundleID = "com.brave.Browser",
 	},
+	["com.seriflabs.affinityphoto"] = {
+		bundleID = "com.seriflabs.affinityphoto",
+		hyperKey = "a",
+	},
 	["net.whatsapp.WhatsApp"] = {
 		bundleID = "net.whatsapp.WhatsApp",
 		hyperKey = "n",
