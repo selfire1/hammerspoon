@@ -12,7 +12,7 @@ module.newTab = function(url)
 end
 
 module.jump = function(url)
-	local prefixedUrl = "https://" .. url
+	local prefixedUrl = url
 	local function getLocationOfTab(tab)
 		local _success, _object, output = hs.osascript.applescript([[
 set _output to ""

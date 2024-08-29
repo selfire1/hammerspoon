@@ -98,7 +98,7 @@ Hyper:bind({}, "z", nil, function()
 		hs.application.launchOrFocusByBundleID("us.zoom.xos")
 	elseif hs.application.find("com.hnc.Discord") then
 		hs.application.launchOrFocusByBundleID("com.hnc.Discord")
-	elseif Arc.jump("teams.microsoft.com") then
+	elseif Arc.jump("https://teams.microsoft.com") then
 		return true
 	end
 end)
@@ -112,7 +112,7 @@ end)
 
 Arc = require("arc")
 Hyper:bind({}, "j", nil, function()
-	if Arc.jump("devdocs.io") then
+	if Arc.jump("https://devdocs.io") then
 	else
 		Arc.newTab("devdocs.io")
 	end
