@@ -65,6 +65,7 @@ return {
 	},
 	["md.obsidian"] = {
 		bundleID = "md.obsidian",
+		hyperKey = "o",
 	},
 	["com.amazon.Kindle"] = {
 		bundleID = "com.amazon.Kindle",
@@ -75,12 +76,9 @@ return {
 	["maccatalyst.com.endel.endel"] = {
 		bundleID = "maccatalyst.com.endel.endel",
 	},
-	["net.kovidgoyal.kitty"] = {
-		bundleID = "net.kovidgoyal.kitty",
-		hyperKey = "i",
-	},
 	["com.github.wez.wezterm"] = {
 		bundleID = "com.github.wez.wezterm",
+		hyperKey = "i",
 	},
 	["com.toggl.toggldesktop.TogglDesktop"] = {
 		bundleID = "com.toggl.toggldesktop.TogglDesktop",
