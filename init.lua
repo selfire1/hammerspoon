@@ -11,8 +11,12 @@ hs.fnutils.each(Config.applications, function(appConfig)
 		Hyper:bind({}, appConfig.hyperKey, function()
 			if appConfig.focus or appConfig.focusExclude then
 				local currentFocus = Focusmode.getCurrentFocus()
-				local currentNormalised = string.lower(currentFocus)
-				if appConfig.focusExclude == currentNormalised or appConfig.focus ~= currentNormalised then
+				local currentFocusNormalised = string.lower(currentFocus)
+
+				local isOnBlacklist = appConfig.focusExclude ~= nil and appConfig.focusExclude == currentFocusNormalised
+				local isNotOnWhitelist = appConfig.focus ~= nil and appConfig.focus ~= currentFocusNormalised
+
+				if isOnBlacklist or isNotOnWhitelist then
 					hs.alert.show("Not set in this focus")
 					return
 				end
