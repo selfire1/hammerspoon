@@ -1,4 +1,8 @@
 return {
+	["com.alexandersandberg.balance"] = {
+		bundleID = "com.alexandersandberg.balance",
+		hyperKey = "z",
+	},
 	["com.culturedcode.ThingsMac"] = {
 		bundleID = "com.culturedcode.ThingsMac",
 		hyperKey = "t",
