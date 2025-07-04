@@ -1,6 +1,8 @@
 hs.loadSpoon("Hyper")
 Hyper = spoon.Hyper
-Hyper:bindHotKeys({ hyperKey = { {}, "F19" } })
+Hyper:bindHotKeys({ hyperKey = { {}, "F12" } })
+
+Arc = require("arc")
 
 Config = {}
 Config.applications = require("configApplications")
