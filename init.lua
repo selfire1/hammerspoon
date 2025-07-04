@@ -106,10 +106,3 @@ Hyper:bind({}, "z", nil, function()
 		return true
 	end
 end)
-
-Autolayout = require("autolayout.init")
-
-Hyper:bind({}, "SPACE", nil, function()
-	print("Starting autolayout")
-	Autolayout.start()
-end)
