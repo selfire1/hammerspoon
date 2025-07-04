@@ -113,11 +113,3 @@ Hyper:bind({}, "SPACE", nil, function()
 	print("Starting autolayout")
 	Autolayout.start()
 end)
-
-Arc = require("arc")
-Hyper:bind({}, "j", nil, function()
-	if Arc.jump("https://devdocs.io") then
-	else
-		Arc.newTab("devdocs.io")
-	end
-end)
