@@ -67,16 +67,7 @@ Hyper:bind({}, "k", nil, function()
 end)
 
 Hyper:bind({}, "a", nil, function()
-	hs.osascript.applescript([[
-tell application "Arc"
-	tell front window
-		tell active space
-			tell tab 1 to select
-		end tell
-	end tell
-	activate
-end tell
-    ]])
+	Arc.jump("http://localhost:3000")
 end)
 
 -- https://thesweetsetup.com/oopsiethings-applescript-for-things-on-mac/
