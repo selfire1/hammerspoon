@@ -9,6 +9,7 @@ return {
 	},
 	["com.apple.dt.Xcode"] = {
 		bundleID = "com.apple.dt.Xcode",
+		focusExclude = "work",
 		hyperKey = "x",
 	},
 	["net.shinyfrog.bear"] = {
