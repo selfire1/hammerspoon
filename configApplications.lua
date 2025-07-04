@@ -1,7 +1,7 @@
 return {
 	["com.alexandersandberg.balance"] = {
 		bundleID = "com.alexandersandberg.balance",
-		hyperKey = "r",
+		hyperKey = "f",
 	},
 	["com.culturedcode.ThingsMac"] = {
 		bundleID = "com.culturedcode.ThingsMac",
@@ -32,7 +32,6 @@ return {
 	},
 	["com.figma.Desktop"] = {
 		bundleID = "com.figma.Desktop",
-		hyperKey = "f",
 	},
 	["com.hnc.Discord"] = {
 		bundleID = "com.hnc.Discord",
