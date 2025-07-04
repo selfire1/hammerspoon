@@ -19,6 +19,8 @@ hs.fnutils.each(Config.applications, function(appConfig)
 				if isOnBlacklist or isNotOnWhitelist then
 					hs.alert.show("Not set in this focus")
 					return
+				else
+					hs.application.launchOrFocusByBundleID(appConfig.bundleID)
 				end
 			end
 			hs.application.launchOrFocusByBundleID(appConfig.bundleID)
