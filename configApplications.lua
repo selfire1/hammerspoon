@@ -12,6 +12,10 @@ return {
 		focusExclude = "work",
 		hyperKey = "x",
 	},
+	["io.beekeeperstudio.desktop"] = {
+		bundleID = "io.beekeeperstudio.desktop",
+		hyperKey = "v",
+	},
 	["net.shinyfrog.bear"] = {
 		bundleID = "net.shinyfrog.bear",
 		hyperKey = "b",
