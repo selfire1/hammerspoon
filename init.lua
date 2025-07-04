@@ -45,10 +45,6 @@ Hyper:bind({}, "h", nil, function()
 	hs.application.launchOrFocusByBundleID("org.hammerspoon.Hammerspoon")
 end)
 
-Hyper:bind({}, "r", nil, function()
-	hs.reload()
-end)
-
 -- Link Wizard: Hyper + K gets me the link wherever
 Hyper:bind({}, "k", nil, function()
 	-- If in Obsidian, copy link to note
